@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados de Búsqueda</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+
+<body class="bg-light">
+
+    <div class="container py-4">
+        <h4 class="fw-bold mb-1">Resultados de Búsqueda</h4>
+        <p class="text-muted mb-4">Encontramos <span class="text-primary fw-semibold">6 empleos</span> que coinciden con
+            tu búsqueda</p>
+
+        <div class="row g-3">
+
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                        <h6 class="fw-bold mb-3"><i class="bi bi-funnel-fill me-1"></i> Filtros</h6>
+
+                        <p class="text-muted small fw-semibold mb-2">Nivel de experiencia</p>
+                        <div class="form-check mb-1">
+                            <input class="form-check-input" type="checkbox" id="junior">
+                            <label class="form-check-label small" for="junior">Junior</label>
+                        </div>
+                        <div class="form-check mb-1">
+                            <input class="form-check-input" type="checkbox" id="medio">
+                            <label class="form-check-label small" for="medio">Medio</label>
+                        </div>
+                        <div class="form-check mb-1">
+                            <input class="form-check-input" type="checkbox" id="senior">
+                            <label class="form-check-label small" for="senior">Senior</label>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" id="ejecutivo">
+                            <label class="form-check-label small" for="ejecutivo">Ejecutivo</label>
+                        </div>
+
+                        <p class="text-muted small fw-semibold mb-2">Sector Laboral</p>
+                        <div class="form-check mb-1">
+                            <input class="form-check-input" type="checkbox" id="tecnologia">
+                            <label class="form-check-label small" for="tecnologia">Tecnología</label>
+                        </div>
+                        <div class="form-check mb-1">
+                            <input class="form-check-input" type="checkbox" id="diseno">
+                            <label class="form-check-label small" for="diseno">Diseño</label>
+                        </div>
+                        <div class="form-check mb-1">
+                            <input class="form-check-input" type="checkbox" id="marketing">
+                            <label class="form-check-label small" for="marketing">Marketing</label>
+                        </div>
+                        <div class="form-check mb-1">
+                            <input class="form-check-input" type="checkbox" id="datos">
+                            <label class="form-check-label small" for="datos">Datos</label>
+                        </div>
+                        <div class="form-check mb-1">
+                            <input class="form-check-input" type="checkbox" id="ventas">
+                            <label class="form-check-label small" for="ventas">Ventas</label>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" id="rrhh">
+                            <label class="form-check-label small" for="rrhh">Recursos Humanos</label>
+                        </div>
+
+                        <p class="text-muted small fw-semibold mb-2">Tipo de Contrato</p>
+                        <div class="form-check mb-1">
+                            <input class="form-check-input" type="checkbox" id="tiempoCompleto">
+                            <label class="form-check-label small" for="tiempoCompleto">Tiempo Completo</label>
+                        </div>
+                        <div class="form-check mb-1">
+                            <input class="form-check-input" type="checkbox" id="medioTiempo">
+                            <label class="form-check-label small" for="medioTiempo">Medio Tiempo</label>
+                        </div>
+                        <div class="form-check mb-1">
+                            <input class="form-check-input" type="checkbox" id="freelance">
+                            <label class="form-check-label small" for="freelance">Freelance</label>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" id="contrato">
+                            <label class="form-check-label small" for="contrato">Contrato</label>
+                        </div>
+
+
+                        <button class="btn text-light" style="background-color: blue;;">Limpiar Filtros</button>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                <div class="card border-0 shadow-sm mb-3">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div class="d-flex gap-3">
+                                <div class="bg-light rounded p-2 d-flex align-items-center justify-content-center"
+                                    style="width:45px;height:45px;">
+                                    <i class="bi bi-stack fs-5 text-primary"></i>
+                                </div>
+                                <div>
+                                    <h6 class="fw-bold mb-0">Desarrollador Full Stack Senior</h6>
+                                    <p class="text-muted small mb-1">FullTech Solutions</p>
+                                    <p class="text-muted small mb-2">Buscamos un desarrollador con experiencia en
+                                        React.js y Node.js</p>
+                                    <div class="d-flex gap-3 flex-wrap">
+                                        <span class="small text-muted"><i class="bi bi-geo-alt me-1"></i>San Salvador
+                                            (Remoto)</span>
+                                        <span class="small text-muted"><i class="bi bi-briefcase me-1"></i>Tiempo
+                                            Completo</span>
+                                        <span class="small text-success fw-semibold"><i
+                                                class="bi bi-currency-dollar"></i>$1K - $1.5K</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-column align-items-end gap-2">
+                                <span class="badge bg-dark">Senior</span>
+                                <span class="text-muted" style="font-size:11px;">Hace 2 días</span>
+                                <button class="btn text-light" style="background-color: blue;;">Ver Detalles</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card border-0 shadow-sm mb-3">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div class="d-flex gap-3">
+                                <div class="bg-light rounded p-2 d-flex align-items-center justify-content-center"
+                                    style="width:45px;height:45px;">
+                                    <i class="bi bi-stack fs-5 text-primary"></i>
+                                </div>
+                                <div>
+                                    <h6 class="fw-bold mb-0">Desarrollador Full Stack Senior</h6>
+                                    <p class="text-muted small mb-1">FullTech Solutions</p>
+                                    <p class="text-muted small mb-2">Buscamos un desarrollador con experiencia en
+                                        React.js y Node.js</p>
+                                    <div class="d-flex gap-3 flex-wrap">
+                                        <span class="small text-muted"><i class="bi bi-geo-alt me-1"></i>San Salvador
+                                            (Remoto)</span>
+                                        <span class="small text-muted"><i class="bi bi-briefcase me-1"></i>Tiempo
+                                            Completo</span>
+                                        <span class="small text-success fw-semibold"><i
+                                                class="bi bi-currency-dollar"></i>$1K - $1.5K</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-column align-items-end gap-2">
+                                <span class="badge bg-dark">Senior</span>
+                                <span class="text-muted" style="font-size:11px;">Hace 2 días</span>
+                                <button class="btn text-light" style="background-color: blue;;">Ver Detalles</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card border-0 shadow-sm mb-3">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div class="d-flex gap-3">
+                                <div class="bg-light rounded p-2 d-flex align-items-center justify-content-center"
+                                    style="width:45px;height:45px;">
+                                    <i class="bi bi-stack fs-5 text-primary"></i>
+                                </div>
+                                <div>
+                                    <h6 class="fw-bold mb-0">Desarrollador Full Stack Senior</h6>
+                                    <p class="text-muted small mb-1">FullTech Solutions</p>
+                                    <p class="text-muted small mb-2">Buscamos un desarrollador con experiencia en
+                                        React.js y Node.js</p>
+                                    <div class="d-flex gap-3 flex-wrap">
+                                        <span class="small text-muted"><i class="bi bi-geo-alt me-1"></i>San Salvador
+                                            (Remoto)</span>
+                                        <span class="small text-muted"><i class="bi bi-briefcase me-1"></i>Tiempo
+                                            Completo</span>
+                                        <span class="small text-success fw-semibold"><i
+                                                class="bi bi-currency-dollar"></i>$1K - $1.5K</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-column align-items-end gap-2">
+                                <span class="badge bg-dark">Senior</span>
+                                <span class="text-muted" style="font-size:11px;">Hace 2 días</span>
+                                <button class="btn text-light" style="background-color: blue;;">Ver Detalles</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <nav>
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item"><a class="page-link text-muted" href="#">Anterior</a></li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link text-muted" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link text-muted" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link text-muted" href="#">Siguiente</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
