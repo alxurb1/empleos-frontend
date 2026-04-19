@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perfil de Empresa</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+</head>
+
+<body class="bg-light">
+
+    <!-- NAVBAR -->
+    <section>
+        <nav class="navbar navbar-expand-lg bg-body-secondary px-3 px-lg-5 py-3">
+            <a class="navbar-brand fw-bold fs-4" href="#" style="color: blue">
+                <i class="bi bi-briefcase"></i> Empleos
+            </a>
+            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="mx-auto my-2 my-lg-0" style="max-width: 420px; width: 100%">
+                    <input type="text" class="form-control rounded-2" placeholder="Buscar empleos, empresas..." />
+                </div>
+                <div class="d-flex flex-column flex-lg-row gap-2 mt-2 mt-lg-0 ms-lg-3">
+                    <a href="#">
+                        <button class="btn btn-light fw-bold w-100" style="color: blue">
+                            Iniciar Sesión
+                        </button>
+                    </a>
+                    <a href="#">
+                        <button class="btn fw-bold text-light w-100" style="background-color: blue">
+                            Registrarse
+                        </button>
+                    </a>
+                </div>
+                <ul class="navbar-nav d-lg-none mt-3 border-top pt-3">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link text-dark"><i class="bi bi-search"></i> Buscar Empleo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link text-dark"><i class="bi bi-stack"></i> Recursos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link text-dark"><i class="bi bi-bookmark-star-fill"></i> Valoraciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link text-dark"><i class="bi bi-person-fill"></i> Mi Perfil</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="d-none d-lg-flex gap-5 px-5 py-3 border-top">
+            <a href="#" class="text-dark text-decoration-none">
+                <i class="bi bi-search"></i> Buscar Empleo
+            </a>
+            <a href="#" class="text-dark text-decoration-none">
+                <i class="bi bi-stack"></i> Recursos
+            </a>
+            <a href="#" class="text-dark text-decoration-none">
+                <i class="bi bi-bookmark-star-fill"></i> Valoraciones
+            </a>
+            <a href="#" class="text-dark text-decoration-none">
+                <i class="bi bi-person-fill"></i> Mi Perfil
+            </a>
+        </div>
+    </section>
+    <div class="container py-4">
+        <div class="row g-3">
+
+            <!-- Columna izquierda -->
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm text-center">
+                    <div class="card-body">
+                        <div class="bg-primary rounded d-flex align-items-center justify-content-center mx-auto mb-3 text-white fw-bold fs-4"
+                            style="width: 80px; height: 80px">
+                            FT
+                        </div>
+                        <h6 class="fw-bold mb-0">FullTech Solutions</h6>
+                        <p class="text-primary small mb-1">Tecnología de la Información</p>
+                        <p class="text-warning small mb-3">
+                            <i class="bi bi-star-fill"></i> 4.5
+                            <span class="text-muted">(27 Reseñas)</span>
+                        </p>
+                        <button class="btn btn-outline-secondary btn-sm w-100 mb-3">
+                            <i class="bi bi-upload me-1"></i> Cambiar Logo
+                        </button>
+                        <hr />
+                        <div class="text-start">
+                            <p class="small mb-2"><i class="bi bi-calendar3 me-2 text-muted"></i>Fundada en 2010</p>
+                            <p class="small mb-2"><i class="bi bi-people me-2 text-muted"></i>201 - 500 Empleados</p>
+                            <p class="small mb-2"><i class="bi bi-geo-alt me-2 text-muted"></i>San Salvador, El Salvador
+                            </p>
+                            <p class="small mb-2"><i class="bi bi-envelope me-2 text-muted"></i>correo@gmail.com</p>
+                            <p class="small mb-2"><i class="bi bi-telephone me-2 text-muted"></i>1234 5678</p>
+                            <p class="small mb-0">
+                                <a href="#" class="text-primary text-decoration-none"><i
+                                        class="bi bi-linkedin me-1"></i>LinkedIn</a>
+                                &nbsp;
+                                <a href="#" class="text-primary text-decoration-none"><i
+                                        class="bi bi-globe2 me-1"></i>Web</a>
+                            </p>
+                        </div>
+                        <hr />
+                        <div class="d-flex justify-content-between">
+                            <small class="text-muted">Empleos Activos</small>
+                            <span class="fw-bold">15</span>
+                        </div>
+                        <div class="d-flex justify-content-between mt-1">
+                            <small class="text-muted">Vistas del Perfil</small>
+                            <span class="fw-bold">1,240</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Columna derecha -->
+            <div class="col-md-9">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+
+                        <!-- Tabs -->
+                        <ul class="nav nav-tabs mb-4" id="companyTabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="acerca-tab" data-bs-toggle="tab"
+                                    data-bs-target="#acerca" type="button" role="tab">
+                                    Acerca de
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="empleos-tab" data-bs-toggle="tab" data-bs-target="#empleos"
+                                    type="button" role="tab">
+                                    Empleos
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="resenas-tab" data-bs-toggle="tab" data-bs-target="#resenas"
+                                    type="button" role="tab">
+                                    Reseñas
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="editar-tab" data-bs-toggle="tab" data-bs-target="#editar"
+                                    type="button" role="tab">
+                                    Editar Perfil
+                                </button>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content" id="companyTabsContent">
+
+                            <!-- ACERCA DE -->
+                            <div class="tab-pane fade show active" id="acerca" role="tabpanel">
+                                <div class="row g-3">
+                                    <div class="col-md-7">
+                                        <div class="card border-0 bg-light mb-3">
+                                            <div class="card-body">
+                                                <h6 class="fw-bold mb-2">Descripción de la Empresa</h6>
+                                                <p class="text-muted small mb-0">
+                                                    FullTech Solutions es una empresa líder en desarrollo de software y
+                                                    soluciones tecnológicas innovadoras. Nos especializamos en
+                                                    transformación digital, desarrollo de aplicaciones empresariales y
+                                                    consultoría IT.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="card border-0 bg-light mb-3">
+                                            <div class="card-body">
+                                                <h6 class="fw-bold mb-2">Nuestra Misión</h6>
+                                                <p class="text-muted small mb-0">
+                                                    Transformar negocios a través de la tecnología, creando soluciones
+                                                    que impulsen el crecimiento y la eficiencia de nuestros clientes.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="card border-0 bg-light">
+                                            <div class="card-body">
+                                                <h6 class="fw-bold mb-2">Nuestra Visión</h6>
+                                                <p class="text-muted small mb-0">
+                                                    Ser referentes en transformación digital en Latinoamérica,
+                                                    impulsando el crecimiento y la eficiencia de nuestros clientes.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-5">
+                                        <div class="card border-0 bg-light mb-3">
+                                            <div class="card-body">
+                                                <h6 class="fw-bold mb-2">Beneficios</h6>
+                                                <ul class="list-unstyled small text-muted mb-0">
+                                                    <li class="mb-1"><i class="bi bi-dot text-primary"></i> Seguro
+                                                        médico privado</li>
+                                                    <li class="mb-1"><i class="bi bi-dot text-primary"></i> Teletrabajo
+                                                        flexible</li>
+                                                    <li class="mb-1"><i class="bi bi-dot text-primary"></i> Formación
+                                                        continua</li>
+                                                    <li class="mb-1"><i class="bi bi-dot text-primary"></i> Bonus por
+                                                        desempeño</li>
+                                                    <li class="mb-1"><i class="bi bi-dot text-primary"></i> Días de
+                                                        vacaciones adicionales</li>
+                                                    <li class="mb-0"><i class="bi bi-dot text-primary"></i> Plan de
+                                                        pensiones</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="card border-0 bg-light">
+                                            <div class="card-body">
+                                                <h6 class="fw-bold mb-2">Valores</h6>
+                                                <ul class="list-unstyled small text-muted mb-0">
+                                                    <li class="mb-1"><i class="bi bi-dot text-primary"></i> Innovación
+                                                        Constante</li>
+                                                    <li class="mb-1"><i class="bi bi-dot text-primary"></i> Trabajo en
+                                                        Equipo</li>
+                                                    <li class="mb-1"><i class="bi bi-dot text-primary"></i> Desarrollo
+                                                        Profesional</li>
+                                                    <li class="mb-1"><i class="bi bi-dot text-primary"></i> Excelencia
+                                                        Técnica</li>
+                                                    <li class="mb-0"><i class="bi bi-dot text-primary"></i> Compromiso
+                                                        con el cliente</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- EMPLEOS -->
+                            <div class="tab-pane fade" id="empleos" role="tabpanel">
+                                <h6 class="fw-bold mb-3">Empleos Activos</h6>
+
+                                <div class="card border-0 bg-light mb-2">
+                                    <div class="card-body py-2 px-3">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <p class="fw-bold small mb-0">Desarrollador Full Stack Senior</p>
+                                                <p class="text-muted small mb-0">Remoto · Tiempo Completo</p>
+                                                <p class="text-muted small mb-0">Publicado el 10/03/2026</p>
+                                            </div>
+                                            <button class="btn btn-sm fw-bold text-light"
+                                                style="background-color: blue">Ver Empleo</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card border-0 bg-light mb-2">
+                                    <div class="card-body py-2 px-3">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <p class="fw-bold small mb-0">UX/UI Designer</p>
+                                                <p class="text-muted small mb-0">San Salvador · Tiempo Completo</p>
+                                                <p class="text-muted small mb-0">Publicado el 08/03/2026</p>
+                                            </div>
+                                            <button class="btn btn-sm fw-bold text-light"
+                                                style="background-color: blue">Ver Empleo</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card border-0 bg-light mb-3">
+                                    <div class="card-body py-2 px-3">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <p class="fw-bold small mb-0">DevOps Engineer</p>
+                                                <p class="text-muted small mb-0">Remoto · Contrato</p>
+                                                <p class="text-muted small mb-0">Publicado el 05/03/2026</p>
+                                            </div>
+                                            <button class="btn btn-sm fw-bold text-light"
+                                                style="background-color: blue">Ver Empleo</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card border-0 bg-light">
+                                    <div class="card-body">
+                                        <h6 class="fw-bold mb-3"><i class="bi bi-bar-chart-line me-1"></i> Estadísticas
+                                            de Empleos</h6>
+                                        <div class="row text-center">
+                                            <div class="col-4">
+                                                <p class="fw-bold fs-4 text-primary mb-0">15</p>
+                                                <small class="text-muted">Activos</small>
+                                            </div>
+                                            <div class="col-4">
+                                                <p class="fw-bold fs-4 mb-0" style="color: blue">87</p>
+                                                <small class="text-muted">Postulantes</small>
+                                            </div>
+                                            <div class="col-4">
+                                                <p class="fw-bold fs-4 text-success mb-0">12</p>
+                                                <small class="text-muted">Contratados</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- RESEÑAS -->
+                            <div class="tab-pane fade" id="resenas" role="tabpanel">
+                                <h6 class="fw-bold mb-3">Reseñas de Empleados</h6>
+
+                                <div class="card border-0 bg-light mb-2">
+                                    <div class="card-body py-2 px-3">
+                                        <div class="d-flex align-items-start gap-3">
+                                            <div class="bg-secondary rounded-circle d-flex align-items-center justify-content-center text-white fw-bold flex-shrink-0"
+                                                style="width: 40px; height: 40px">
+                                                JM
+                                            </div>
+                                            <div class="flex-grow-1">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <p class="fw-bold small mb-0">Valeria de Arevalo</p>
+                                                    <span class="text-warning small">
+                                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                            class="bi bi-star-fill"></i><i
+                                                            class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                                                    </span>
+                                                </div>
+                                                <p class="text-muted small mb-1">Desarrollador Full Stack · 2021-2024
+                                                </p>
+                                                <p class="text-muted small mb-0">Excelente ambiente laboral, buenas
+                                                    oportunidades de crecimiento y un equipo muy colaborativo.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card border-0 bg-light mb-2">
+                                    <div class="card-body py-2 px-3">
+                                        <div class="d-flex align-items-start gap-3">
+                                            <div class="bg-secondary rounded-circle d-flex align-items-center justify-content-center text-white fw-bold flex-shrink-0"
+                                                style="width: 40px; height: 40px">
+                                                AL
+                                            </div>
+                                            <div class="flex-grow-1">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <p class="fw-bold small mb-0">Alejandra de Arevalo</p>
+                                                    <span class="text-warning small">
+                                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                            class="bi bi-star-fill"></i><i
+                                                            class="bi bi-star-fill"></i><i class="bi bi-star"></i>
+                                                    </span>
+                                                </div>
+                                                <p class="text-muted small mb-1">UX Designer · 2022-2025</p>
+                                                <p class="text-muted small mb-0">Muy buen balance entre vida personal y
+                                                    trabajo. El teletrabajo flexible es un gran beneficio.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card border-0 bg-light mb-3">
+                                    <div class="card-body py-2 px-3">
+                                        <div class="d-flex align-items-start gap-3">
+                                            <div class="bg-secondary rounded-circle d-flex align-items-center justify-content-center text-white fw-bold flex-shrink-0"
+                                                style="width: 40px; height: 40px">
+                                                CR
+                                            </div>
+                                            <div class="flex-grow-1">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <p class="fw-bold small mb-0">Keyli de Urbaez</p>
+                                                    <span class="text-warning small">
+                                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                            class="bi bi-star-fill"></i><i
+                                                            class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                                    </span>
+                                                </div>
+                                                <p class="text-muted small mb-1">DevOps Engineer · 2020-2023</p>
+                                                <p class="text-muted small mb-0">La mejor empresa en la que he
+                                                    trabajado. Los beneficios y el plan de carrera son excelentes.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button class="btn fw-bold text-light" style="background-color: blue">
+                                    <i class="bi bi-star me-1"></i> Escribir una Reseña
+                                </button>
+                            </div>
+
+                            <!-- EDITAR PERFIL -->
+                            <div class="tab-pane fade" id="editar" role="tabpanel">
+                                <h6 class="fw-bold mb-3">Información de la Empresa</h6>
+
+                                <div class="mb-3">
+                                    <label class="form-label small text-muted">Nombre de la Empresa</label>
+                                    <input type="text" class="form-control form-control-sm bg-light border-0"
+                                        value="FullTech Solutions" />
+                                </div>
+
+                                <div class="row g-3 mb-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label small text-muted">Sector / Industria</label>
+                                        <input type="text" class="form-control form-control-sm bg-light border-0"
+                                            value="Tecnología de la Información" />
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label small text-muted">Tamaño de la Empresa</label>
+                                        <select class="form-select form-select-sm bg-light border-0">
+                                            <option selected>201 - 500 Empleados</option>
+                                            <option>1 - 50 Empleados</option>
+                                            <option>51 - 200 Empleados</option>
+                                            <option>501 - 1000 Empleados</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="row g-3 mb-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label small text-muted">Año de Fundación</label>
+                                        <input type="text" class="form-control form-control-sm bg-light border-0"
+                                            value="2010" />
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label small text-muted">Ubicación</label>
+                                        <input type="text" class="form-control form-control-sm bg-light border-0"
+                                            value="San Salvador, El Salvador" />
+                                    </div>
+                                </div>
+
+                                <div class="row g-3 mb-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label small text-muted">Email de Contacto</label>
+                                        <input type="email" class="form-control form-control-sm bg-light border-0"
+                                            value="correo@gmail.com" />
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label small text-muted">Teléfono</label>
+                                        <input type="tel" class="form-control form-control-sm bg-light border-0"
+                                            value="1234 5678" />
+                                    </div>
+                                </div>
+
+                                <div class="row g-3 mb-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label small text-muted">LinkedIn</label>
+                                        <input type="url" class="form-control form-control-sm bg-light border-0"
+                                            placeholder="https://linkedin.com/company/..." />
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label small text-muted">Sitio Web</label>
+                                        <input type="url" class="form-control form-control-sm bg-light border-0"
+                                            placeholder="https://..." />
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label small text-muted">Descripción de la Empresa</label>
+                                    <textarea class="form-control form-control-sm bg-light border-0"
+                                        rows="3">FullTech Solutions es una empresa líder en desarrollo de software y soluciones tecnológicas innovadoras.</textarea>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label small text-muted">Misión</label>
+                                    <textarea class="form-control form-control-sm bg-light border-0"
+                                        rows="2">Transformar negocios a través de la tecnología, creando soluciones que impulsen el crecimiento.</textarea>
+                                </div>
+
+                                <div class="mb-4">
+                                    <label class="form-label small text-muted">Visión</label>
+                                    <textarea class="form-control form-control-sm bg-light border-0"
+                                        rows="2">Ser referentes en transformación digital en Latinoamérica para el año 2030.</textarea>
+                                </div>
+
+                                <button class="btn fw-bold text-light" style="background-color: blue">
+                                    Guardar Cambios
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <section>
+        <footer class="text-light px-4 px-lg-5 py-4" style="background-color: blue">
+            <div class="row g-4">
+                <div class="col-12 col-md-4">
+                    <p class="fs-4 fw-bold mb-2">
+                        <i class="bi bi-briefcase"></i> Empleos
+                    </p>
+                    <p class="fs-6">
+                        Conectamos talento con las mejores oportunidades profesionales. Tu
+                        próximo empleo está aquí.
+                    </p>
+                </div>
+                <div class="col-12 col-md-4">
+                    <p class="fs-5 fw-bold mb-2">Enlaces Rápidos</p>
+                    <ul class="list-unstyled mb-0">
+                        <li class="mb-1">
+                            <a href="#" class="text-light text-decoration-none">Inicio</a>
+                        </li>
+                        <li class="mb-1">
+                            <a href="#" class="text-light text-decoration-none">Buscar Trabajo</a>
+                        </li>
+                        <li class="mb-1">
+                            <a href="#" class="text-light text-decoration-none">Recursos</a>
+                        </li>
+                        <li class="mb-1">
+                            <a href="#" class="text-light text-decoration-none">Foros</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-4">
+                    <p class="fs-5 fw-bold mb-2">Contacto</p>
+                    <ul class="list-unstyled mb-0">
+                        <li class="mb-1">
+                            <i class="bi bi-geo-alt-fill me-1"></i> San Salvador (Remoto)
+                        </li>
+                        <li class="mb-1">
+                            <i class="bi bi-telephone-fill me-1"></i> 1234 5678
+                        </li>
+                        <li class="mb-1">
+                            <i class="bi bi-envelope-fill me-1"></i> correo@ejemplo.com
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
