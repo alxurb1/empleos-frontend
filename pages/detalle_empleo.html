@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detalle de Empleo</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+  </head>
+  <body class="bg-light">
+    <!-- NAVBAR -->
+    <section>
+      <nav class="navbar navbar-expand-lg bg-body-secondary px-3 px-lg-5 py-3">
+        <a class="navbar-brand fw-bold fs-4" href="#" style="color: blue">
+          <i class="bi bi-briefcase"></i> Empleos
+        </a>
+        <button
+          class="navbar-toggler ms-auto"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div
+            class="mx-auto my-2 my-lg-0"
+            style="max-width: 420px; width: 100%"
+          >
+            <input
+              type="text"
+              class="form-control rounded-2"
+              placeholder="Buscar empleos, empresas..."
+            />
+          </div>
+          <div
+            class="d-flex flex-column flex-lg-row gap-2 mt-2 mt-lg-0 ms-lg-3"
+          >
+            <a href="#">
+              <button class="btn btn-light fw-bold w-100" style="color: blue">
+                Iniciar Sesión
+              </button>
+            </a>
+            <a href="#">
+              <button
+                class="btn fw-bold text-light w-100"
+                style="background-color: blue"
+              >
+                Registrarse
+              </button>
+            </a>
+          </div>
+          <ul class="navbar-nav d-lg-none mt-3 border-top pt-3">
+            <li class="nav-item">
+              <a href="#" class="nav-link text-dark"
+                ><i class="bi bi-search"></i> Buscar Empleo</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link text-dark"
+                ><i class="bi bi-stack"></i> Recursos</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link text-dark"
+                ><i class="bi bi-bookmark-star-fill"></i> Valoraciones</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link text-dark"
+                ><i class="bi bi-person-fill"></i> Mi Perfil</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="d-none d-lg-flex gap-5 px-5 py-3 border-top">
+        <a href="#" class="text-dark text-decoration-none">
+          <i class="bi bi-search"></i> Buscar Empleo
+        </a>
+        <a href="#" class="text-dark text-decoration-none">
+          <i class="bi bi-stack"></i> Recursos
+        </a>
+        <a href="#" class="text-dark text-decoration-none">
+          <i class="bi bi-bookmark-star-fill"></i> Valoraciones
+        </a>
+        <a href="#" class="text-dark text-decoration-none">
+          <i class="bi bi-person-fill"></i> Mi Perfil
+        </a>
+      </div>
+    </section>
+    <div class="container py-4">
+      <div class="row g-3">
+        <!-- Columna izquierda -->
+        <div class="col-md-8">
+          <!-- Header del empleo -->
+          <div class="card border-0 shadow-sm mb-3">
+            <div class="card-body">
+              <div class="d-flex gap-3 align-items-start mb-3">
+                <div
+                  class="bg-light rounded p-2 d-flex align-items-center justify-content-center"
+                  style="width: 50px; height: 50px"
+                >
+                  <i class="bi bi-stack fs-4"></i>
+                </div>
+                <div class="flex-grow-1">
+                  <div class="d-flex justify-content-between align-items-start">
+                    <h5 class="fw-bold mb-0">
+                      Desarrollador Full Stack Senior
+                    </h5>
+                    <span class="badge bg-dark ms-2">Senior</span>
+                  </div>
+                  <p class="text-muted small mb-0">FullTech Solutions</p>
+                </div>
+              </div>
+
+              <div class="d-flex flex-wrap gap-3 mb-3">
+                <span class="small text-muted"
+                  ><i class="bi bi-geo-alt me-1"></i>San Salvador (Remoto)</span
+                >
+                <span class="small text-muted"
+                  ><i class="bi bi-briefcase me-1"></i>Tiempo Completo</span
+                >
+                <span class="small text-success fw-semibold"
+                  ><i class="bi bi-currency-dollar"></i>$1K - $1.5K
+                  mensual</span
+                >
+                <span class="small text-muted"
+                  ><i class="bi bi-clock me-1"></i>Hace 2 días</span
+                >
+              </div>
+
+              <button class="btn text-light" style="background-color: blue">
+                <i class="bi bi-send me-1"></i> Postularse Ahora
+              </button>
+            </div>
+          </div>
+
+          <!-- Descripción del puesto -->
+          <div class="card border-0 shadow-sm mb-3">
+            <div class="card-body">
+              <h6 class="fw-bold mb-2">Descripción del puesto</h6>
+              <p class="text-muted small mb-0">
+                Estamos buscando un Desarrollador Full Stack Senior con
+                experiencia comprobada en el desarrollo de aplicaciones web
+                modernas. El candidato ideal tendrá un sólido conocimiento de
+                tecnologías frontend y backend, y será capaz de liderar
+                proyectos técnicos complejos.
+              </p>
+            </div>
+          </div>
+
+          <!-- Responsabilidades -->
+          <div class="card border-0 shadow-sm mb-3">
+            <div class="card-body">
+              <h6 class="fw-bold mb-2">Responsabilidades</h6>
+              <ul class="text-muted small mb-0 ps-3">
+                <li>
+                  Diseñar, desarrollar y mantener aplicaciones web escalables y
+                  de alto rendimiento
+                </li>
+                <li>
+                  Colaborar con equipos multidisciplinarios para definir e
+                  implementar nuevas funcionalidades
+                </li>
+                <li>
+                  Realizar revisiones de código y mentorizar a desarrolladores
+                  junior
+                </li>
+                <li>
+                  Optimizar aplicaciones para máxima velocidad y escalabilidad
+                </li>
+                <li>
+                  Participar en la planificación técnica y arquitectura de
+                  soluciones
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Requisitos -->
+          <div class="card border-0 shadow-sm mb-3">
+            <div class="card-body">
+              <h6 class="fw-bold mb-2">Requisitos</h6>
+              <ul class="text-muted small mb-0 ps-3">
+                <li>5+ años de experiencia en desarrollo Full Stack</li>
+                <li>Experiencia sólida con React, Node.js y TypeScript</li>
+                <li>Conocimiento de bases de datos SQL y NoSQL</li>
+                <li>Experiencia con metodologías ágiles (Scrum/Kanban)</li>
+                <li>
+                  Excelentes habilidades de comunicación y trabajo en equipo
+                </li>
+                <li>Nivel de inglés profesional (B2 o superior)</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Beneficios -->
+          <div class="card border-0 shadow-sm mb-3">
+            <div class="card-body">
+              <h6 class="fw-bold mb-2">Beneficios</h6>
+              <ul class="text-muted small mb-0 ps-3">
+                <li>Salario competitivo basado en experiencia</li>
+                <li>100% trabajo remoto con flexibilidad horaria</li>
+                <li>Seguro médico privado para ti y tu familia</li>
+                <li>
+                  Presupuesto anual para formación y desarrollo profesional
+                </li>
+                <li>Equipamiento tecnológico de última generación</li>
+                <li>30 días de vacaciones al año</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Columna derecha -->
+        <div class="col-md-4">
+          <!-- Sobre la Empresa -->
+          <div class="card border-0 shadow-sm mb-3">
+            <div class="card-body">
+              <h6 class="fw-bold mb-3">Sobre la Empresa</h6>
+
+              <div class="d-flex align-items-start gap-2 mb-3">
+                <i class="bi bi-stack text-muted mt-1"></i>
+                <div>
+                  <p class="text-muted small mb-0">Empresa</p>
+                  <p class="fw-bold small mb-0">FullTech Solutions</p>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-start gap-2 mb-3">
+                <i class="bi bi-geo-alt text-muted mt-1"></i>
+                <div>
+                  <p class="text-muted small mb-0">Ubicación</p>
+                  <p class="fw-bold small mb-0">San Salvador, El Salvador</p>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-start gap-2 mb-3">
+                <i class="bi bi-star-fill text-warning mt-1"></i>
+                <div>
+                  <p class="text-muted small mb-0">Valoración</p>
+                  <p class="fw-bold small mb-0">4.8 / 5 (124 valoraciones)</p>
+                </div>
+              </div>
+
+              <p class="text-muted small mb-3">
+                Es una empresa líder en desarrollo de software con presencia
+                global. Nos especializamos en crear soluciones innovadoras para
+                empresas de diversos sectores.
+              </p>
+
+              <button class="btn btn-outline-secondary btn-sm w-100">
+                Ver Perfil Completo
+              </button>
+            </div>
+          </div>
+
+          <!-- Información de Contacto -->
+          <div class="card border-0 shadow-sm mb-3">
+            <div class="card-body">
+              <h6 class="fw-bold mb-3">Información de Contacto</h6>
+
+              <p class="text-muted small mb-0">Email</p>
+              <p class="fw-bold small mb-3">rrhh@solutions.com</p>
+
+              <p class="text-muted small mb-0">Teléfono</p>
+              <p class="fw-bold small mb-3">+503 1234 5678</p>
+
+              <p class="text-muted small mb-0">Sitio Web</p>
+              <p class="fw-bold small mb-0">www.techsolutions.com</p>
+            </div>
+          </div>
+
+          <!-- Empleos Similares -->
+          <div class="card border-0 shadow-sm">
+            <div class="card-body">
+              <h6 class="fw-bold mb-3">Empleos Similares</h6>
+
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div
+                  class="bg-light rounded p-2 d-flex align-items-center justify-content-center"
+                  style="width: 40px; height: 40px"
+                >
+                  <i class="bi bi-stack text-primary"></i>
+                </div>
+                <div>
+                  <p class="fw-bold small mb-0">Desarrollo Backend</p>
+                  <p class="text-muted small mb-0">WebDev Studios</p>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-center gap-3">
+                <div
+                  class="bg-light rounded p-2 d-flex align-items-center justify-content-center"
+                  style="width: 40px; height: 40px"
+                >
+                  <i class="bi bi-stack text-primary"></i>
+                </div>
+                <div>
+                  <p class="fw-bold small mb-0">Desarrollo Backend</p>
+                  <p class="text-muted small mb-0">WebDev Studios</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- FOOTER -->
+    <section>
+      <footer
+        class="text-light px-4 px-lg-5 py-4"
+        style="background-color: blue"
+      >
+        <div class="row g-4">
+          <div class="col-12 col-md-4">
+            <p class="fs-4 fw-bold mb-2">
+              <i class="bi bi-briefcase"></i> Empleos
+            </p>
+            <p class="fs-6">
+              Conectamos talento con las mejores oportunidades profesionales. Tu
+              próximo empleo está aquí.
+            </p>
+          </div>
+          <div class="col-12 col-md-4">
+            <p class="fs-5 fw-bold mb-2">Enlaces Rápidos</p>
+            <ul class="list-unstyled mb-0">
+              <li class="mb-1">
+                <a href="#" class="text-light text-decoration-none">Inicio</a>
+              </li>
+              <li class="mb-1">
+                <a href="#" class="text-light text-decoration-none"
+                  >Buscar Trabajo</a
+                >
+              </li>
+              <li class="mb-1">
+                <a href="#" class="text-light text-decoration-none">Recursos</a>
+              </li>
+              <li class="mb-1">
+                <a href="#" class="text-light text-decoration-none">Foros</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-12 col-md-4">
+            <p class="fs-5 fw-bold mb-2">Contacto</p>
+            <ul class="list-unstyled mb-0">
+              <li class="mb-1">
+                <i class="bi bi-geo-alt-fill me-1"></i> San Salvador (Remoto)
+              </li>
+              <li class="mb-1">
+                <i class="bi bi-telephone-fill me-1"></i> 1234 5678
+              </li>
+              <li class="mb-1">
+                <i class="bi bi-envelope-fill me-1"></i> correo@ejemplo.com
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
