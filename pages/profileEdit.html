@@ -1,0 +1,644 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi Perfil</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+  </head>
+  <body class="bg-light">
+    <div class="container py-4">
+      <h4 class="fw-bold mb-1">Mi Perfil</h4>
+      <p class="text-muted mb-4">Gestiona tu información y preferencias</p>
+
+      <div class="row g-3">
+        <!-- Columna izquierda -->
+        <div class="col-md-3">
+          <div class="card border-0 shadow-sm text-center">
+            <div class="card-body">
+              <div
+                class="bg-primary rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3 text-white fw-bold fs-4"
+                style="width: 80px; height: 80px"
+              >
+                DR
+              </div>
+              <h6 class="fw-bold mb-0">Daniel Rendón</h6>
+              <p class="text-muted small mb-3">Full Stack</p>
+              <button class="btn btn-outline-secondary btn-sm w-100 mb-3">
+                <i class="bi bi-upload me-1"></i> Cambiar Foto
+              </button>
+              <div class="text-start mb-1">
+                <small class="text-muted">Completitud de Perfil</small>
+              </div>
+              <div class="progress mb-1" style="height: 6px">
+                <div class="progress-bar bg-primary" style="width: 75%"></div>
+              </div>
+              <small class="text-muted">75% completado</small>
+              <hr />
+              <div class="d-flex justify-content-between">
+                <small class="text-muted">Vistas del Perfil</small>
+                <span class="fw-bold">234</span>
+              </div>
+              <div class="d-flex justify-content-between mt-1">
+                <small class="text-muted">Postulaciones</small>
+                <span class="fw-bold">12</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Columna derecha -->
+        <div class="col-md-9">
+          <div class="card border-0 shadow-sm">
+            <div class="card-body">
+              <!-- Viñetas -->
+              <ul class="nav nav-tabs mb-4" id="profileTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link active"
+                    id="info-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#info"
+                    type="button"
+                    role="tab"
+                  >
+                    Información
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link"
+                    id="curriculum-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#curriculum"
+                    type="button"
+                    role="tab"
+                  >
+                    Currículum
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link"
+                    id="postulaciones-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#postulaciones"
+                    type="button"
+                    role="tab"
+                  >
+                    Postulaciones
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link"
+                    id="alertas-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#alertas"
+                    type="button"
+                    role="tab"
+                  >
+                    Alertas
+                  </button>
+                </li>
+              </ul>
+
+              <div class="tab-content" id="profileTabsContent">
+                <!-- Información -->
+                <div
+                  class="tab-pane fade show active"
+                  id="info"
+                  role="tabpanel"
+                >
+                  <h6 class="fw-bold mb-3">Información Personal</h6>
+
+                  <div class="mb-3">
+                    <label class="form-label small text-muted"
+                      >Nombre Completo</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control form-control-sm bg-light border-0"
+                    />
+                  </div>
+
+                  <div class="row g-3 mb-3">
+                    <div class="col-md-6">
+                      <label class="form-label small text-muted">Email</label>
+                      <input
+                        type="email"
+                        class="form-control form-control-sm bg-light border-0"
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label small text-muted"
+                        >Teléfono</label
+                      >
+                      <input
+                        type="tel"
+                        class="form-control form-control-sm bg-light border-0"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="row g-3 mb-3">
+                    <div class="col-md-6">
+                      <label class="form-label small text-muted"
+                        >Ubicación</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control form-control-sm bg-light border-0"
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label small text-muted"
+                        >LinkedIn</label
+                      >
+                      <input
+                        type="url"
+                        class="form-control form-control-sm bg-light border-0"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label small text-muted"
+                      >Título Profesional</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control form-control-sm bg-light border-0"
+                    />
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label small text-muted"
+                      >Biografía Personal</label
+                    >
+                    <textarea
+                      class="form-control form-control-sm bg-light border-0"
+                      rows="3"
+                    ></textarea>
+                  </div>
+
+                  <div class="mb-4">
+                    <label class="form-label small text-muted"
+                      >Habilidades</label
+                    >
+                    <div class="d-flex flex-wrap gap-2 align-items-center">
+                      <span
+                        class="badge bg-dark d-flex align-items-center gap-1"
+                        >React <i class="bi bi-x" style="cursor: pointer"></i
+                      ></span>
+                      <span
+                        class="badge bg-dark d-flex align-items-center gap-1"
+                        >Node.js <i class="bi bi-x" style="cursor: pointer"></i
+                      ></span>
+                      <span
+                        class="badge bg-dark d-flex align-items-center gap-1"
+                        >TypeScript
+                        <i class="bi bi-x" style="cursor: pointer"></i
+                      ></span>
+                      <input
+                        type="text"
+                        class="form-control form-control-sm bg-light border-0"
+                        style="width: 140px"
+                        placeholder="Nueva habilidad..."
+                      />
+                      <button class="btn btn-dark btn-sm">
+                        Agregar Habilidad
+                      </button>
+                    </div>
+                  </div>
+
+                  <button class="btn text-light" style="background-color: blue">
+                    Guardar Cambios
+                  </button>
+                </div>
+
+                <!-- Currículum -->
+                <div class="tab-pane fade" id="curriculum" role="tabpanel">
+                  <!-- Currículum Vitae -->
+                  <div class="card border-0 shadow-sm mb-3">
+                    <div class="card-body">
+                      <h6 class="fw-bold mb-3">
+                        <i class="bi bi-file-earmark-text me-1"></i> Currículum
+                        Vitae
+                      </h6>
+
+                      <!-- Zona de subida -->
+                      <div class="border rounded text-center p-4 mb-3 bg-light">
+                        <i
+                          class="bi bi-upload fs-2 text-muted mb-2 d-block"
+                        ></i>
+                        <p class="fw-semibold mb-0">Sube tu Currículum</p>
+                        <p class="text-muted small mb-3">
+                          PDF, DOC o DOCX (máx. 5MB)
+                        </p>
+                        <button
+                          class="btn text-light"
+                          style="background-color: blue"
+                        >
+                          Seleccionar Archivo
+                        </button>
+                      </div>
+
+                      <!-- Archivo subido -->
+                      <div class="card border-0 bg-light">
+                        <div
+                          class="card-body py-2 px-3 d-flex justify-content-between align-items-center"
+                        >
+                          <div class="d-flex align-items-center gap-2">
+                            <i
+                              class="bi bi-file-earmark-text text-primary fs-5"
+                            ></i>
+                            <div>
+                              <p class="fw-semibold small mb-0">
+                                CV_Daniel.pdf
+                              </p>
+                              <p class="text-muted small mb-0">
+                                Subido el 10/03/2026
+                              </p>
+                            </div>
+                          </div>
+                          <div class="d-flex gap-2">
+                            <button class="btn btn-outline-secondary btn-sm">
+                              Ver
+                            </button>
+                            <button class="btn btn-outline-danger btn-sm">
+                              Eliminar
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Experiencias Laborales -->
+                  <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                      <h6 class="fw-bold mb-3">Experiencias Laborales</h6>
+
+                      <!-- Experiencia 1 -->
+                      <div class="card border-0 bg-light mb-2">
+                        <div class="card-body py-2 px-3">
+                          <p class="fw-bold small mb-0">
+                            Desarrollador Full Stack Senior
+                          </p>
+                          <p class="text-muted small mb-0">TechCorps Inc.</p>
+                          <p class="text-muted small mb-0">2022 - 2026</p>
+                          <p class="text-muted small mb-0">
+                            Desarrollo de aplicaciones web con React y Node.js
+                          </p>
+                        </div>
+                      </div>
+
+                      <!-- Experiencia 2 -->
+                      <div class="card border-0 bg-light mb-3">
+                        <div class="card-body py-2 px-3">
+                          <p class="fw-bold small mb-0">
+                            Desarrollador Full Stack Senior
+                          </p>
+                          <p class="text-muted small mb-0">TechCorps Inc.</p>
+                          <p class="text-muted small mb-0">2022 - 2026</p>
+                          <p class="text-muted small mb-0">
+                            Desarrollo de aplicaciones web con React y Node.js
+                          </p>
+                        </div>
+                      </div>
+
+                      <!-- Formulario nueva experiencia -->
+                      <div class="card border-0 bg-light">
+                        <div class="card-body">
+                          <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                              <label class="form-label small text-muted"
+                                >Título del Cargo en la Empresa</label
+                              >
+                              <input
+                                type="text"
+                                class="form-control form-control-sm bg-white border-0"
+                              />
+                            </div>
+                            <div class="col-md-6">
+                              <label class="form-label small text-muted"
+                                >Nombre Empresa</label
+                              >
+                              <input
+                                type="text"
+                                class="form-control form-control-sm bg-white border-0"
+                              />
+                            </div>
+                          </div>
+                          <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                              <label class="form-label small text-muted"
+                                >Año Inicio</label
+                              >
+                              <input
+                                type="text"
+                                class="form-control form-control-sm bg-white border-0"
+                              />
+                            </div>
+                            <div class="col-md-6">
+                              <label class="form-label small text-muted"
+                                >Año Finalización (o Actual)</label
+                              >
+                              <input
+                                type="text"
+                                class="form-control form-control-sm bg-white border-0"
+                              />
+                            </div>
+                          </div>
+                          <div class="mb-3">
+                            <label class="form-label small text-muted"
+                              >Descripción de Trabajo</label
+                            >
+                            <input
+                              type="text"
+                              class="form-control form-control-sm bg-white border-0"
+                            />
+                          </div>
+                          <div class="text-end">
+                            <button
+                              class="btn text-light"
+                              style="background-color: blue"
+                            >
+                              Agregar Experiencia
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Postulaciones -->
+                <div class="tab-pane fade" id="postulaciones" role="tabpanel">
+                  <!-- Historial -->
+                  <div class="mb-3">
+                    <h6 class="fw-bold mb-3">Historial de Postulaciones</h6>
+
+                    <div class="card border-0 bg-light mb-2">
+                      <div class="card-body py-2 px-3">
+                        <div
+                          class="d-flex justify-content-between align-items-center"
+                        >
+                          <div class="d-flex align-items-center gap-3">
+                            <i class="bi bi-star text-muted"></i>
+                            <div>
+                              <p class="fw-bold small mb-0">
+                                Desarrollador Full Stack Senior
+                              </p>
+                              <p class="text-muted small mb-0">
+                                TechCorp Solutions
+                              </p>
+                              <p class="text-muted small mb-0">
+                                Postulado el 10/03/2026
+                              </p>
+                            </div>
+                          </div>
+                          <span class="badge bg-secondary">En Revisión</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="card border-0 bg-light mb-2">
+                      <div class="card-body py-2 px-3">
+                        <div
+                          class="d-flex justify-content-between align-items-center"
+                        >
+                          <div class="d-flex align-items-center gap-3">
+                            <i class="bi bi-star text-muted"></i>
+                            <div>
+                              <p class="fw-bold small mb-0">
+                                Frontend Developer
+                              </p>
+                              <p class="text-muted small mb-0">
+                                WebDev Studios
+                              </p>
+                              <p class="text-muted small mb-0">
+                                Postulado el 10/03/2026
+                              </p>
+                            </div>
+                          </div>
+                          <span
+                            class="badge text-light"
+                            style="background-color: blue"
+                            >Entrevista Programada</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="card border-0 bg-light mb-2">
+                      <div class="card-body py-2 px-3">
+                        <div
+                          class="d-flex justify-content-between align-items-center"
+                        >
+                          <div class="d-flex align-items-center gap-3">
+                            <i class="bi bi-star text-muted"></i>
+                            <div>
+                              <p class="fw-bold small mb-0">React Developer</p>
+                              <p class="text-muted small mb-0">
+                                Digital Innovations
+                              </p>
+                              <p class="text-muted small mb-0">
+                                Postulado el 10/03/2026
+                              </p>
+                            </div>
+                          </div>
+                          <span class="badge bg-light text-dark border"
+                            >Rechazado</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Estadísticas -->
+                  <div class="card border-0 bg-light">
+                    <div class="card-body">
+                      <h6 class="fw-bold mb-3">
+                        <i class="bi bi-bar-chart-line me-1"></i> Estadísticas
+                      </h6>
+                      <div class="row text-center">
+                        <div class="col-4">
+                          <p class="fw-bold fs-4 text-primary mb-0">12</p>
+                          <small class="text-muted">Total</small>
+                        </div>
+                        <div class="col-4">
+                          <p class="fw-bold fs-4 mb-0" style="color: blue">5</p>
+                          <small class="text-muted">En Proceso</small>
+                        </div>
+                        <div class="col-4">
+                          <p class="fw-bold fs-4 text-success mb-0">2</p>
+                          <small class="text-muted">Entrevistas</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Alertas -->
+                <div class="tab-pane fade" id="alertas" role="tabpanel">
+                  <!-- Alertas de Empleo -->
+                  <div class="card border-0 shadow-sm mb-3">
+                    <div class="card-body">
+                      <h6 class="fw-bold mb-3">
+                        <i class="bi bi-bell me-1"></i> Alertas de Empleo
+                      </h6>
+
+                      <div
+                        class="d-flex justify-content-between align-items-center py-2 border-bottom"
+                      >
+                        <div>
+                          <p class="fw-semibold small mb-0">
+                            Notificaciones por Email
+                          </p>
+                          <p class="text-muted small mb-0">
+                            Recibe alertas cuando haya nuevos empleos que
+                            coincidan con tus preferencias
+                          </p>
+                        </div>
+                        <div class="form-check form-switch ms-3">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            role="switch"
+                          />
+                        </div>
+                      </div>
+
+                      <div
+                        class="d-flex justify-content-between align-items-center py-2 border-bottom"
+                      >
+                        <div>
+                          <p class="fw-semibold small mb-0">
+                            Empleos Similares
+                          </p>
+                          <p class="text-muted small mb-0">
+                            Notificaciones de empleos relacionados con tus
+                            postulaciones
+                          </p>
+                        </div>
+                        <div class="form-check form-switch ms-3">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            role="switch"
+                          />
+                        </div>
+                      </div>
+
+                      <div
+                        class="d-flex justify-content-between align-items-center py-2 border-bottom"
+                      >
+                        <div>
+                          <p class="fw-semibold small mb-0">
+                            Actualizaciones de Postulaciones
+                          </p>
+                          <p class="text-muted small mb-0">
+                            Recibe actualizaciones sobre el estado de tus
+                            postulaciones
+                          </p>
+                        </div>
+                        <div class="form-check form-switch ms-3">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            role="switch"
+                          />
+                        </div>
+                      </div>
+
+                      <div
+                        class="d-flex justify-content-between align-items-center py-2"
+                      >
+                        <div>
+                          <p class="fw-semibold small mb-0">
+                            Actualizaciones de Postulaciones
+                          </p>
+                          <p class="text-muted small mb-0">
+                            Resumen semanal de empleos recomendados para ti
+                          </p>
+                        </div>
+                        <div class="form-check form-switch ms-3">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            role="switch"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Valorar Empresas -->
+                  <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                      <h6 class="fw-bold mb-1">Valorar Empresas</h6>
+                      <p class="text-muted small mb-3">
+                        Comparte tu experiencia y ayuda a otros profesionales a
+                        tomar mejores decisiones.
+                      </p>
+
+                      <div class="card border-0 bg-light mb-2">
+                        <div
+                          class="card-body py-2 px-3 d-flex justify-content-between align-items-center"
+                        >
+                          <div class="d-flex align-items-center gap-3">
+                            <i class="bi bi-star text-primary fs-5"></i>
+                            <div>
+                              <p class="fw-semibold small mb-0">
+                                TechCompany S.L.
+                              </p>
+                              <p class="text-muted small mb-0">
+                                Trabajaste aquí en 2020-2022
+                              </p>
+                            </div>
+                          </div>
+                          <button class="btn btn-outline-secondary btn-sm">
+                            Valorar
+                          </button>
+                        </div>
+                      </div>
+
+                      <div class="card border-0 bg-light mb-2">
+                        <div
+                          class="card-body py-2 px-3 d-flex justify-content-between align-items-center"
+                        >
+                          <div class="d-flex align-items-center gap-3">
+                            <i class="bi bi-star text-primary fs-5"></i>
+                            <div>
+                              <p class="fw-semibold small mb-0">WebStudio</p>
+                              <p class="text-muted small mb-0">
+                                Trabajaste aquí en 2020-2022
+                              </p>
+                            </div>
+                          </div>
+                          <button class="btn btn-outline-secondary btn-sm">
+                            Valorar
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
