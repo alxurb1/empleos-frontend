@@ -50,6 +50,7 @@ const crearCuentaCandidato = async () => {
       const result = await response.json();
       localStorage.setItem("token", result.token);
       localStorage.setItem("userId", result.userData.id_user);
+      localStorage.setItem("userRole", role);
       alert("Usuario registrado correctamente");
       return true;
     } else {
@@ -106,6 +107,12 @@ const crearCuentaEmpresa = async () => {
       const result = await response.json();
       localStorage.setItem("token", result.token);
       localStorage.setItem("userId", result.userData.id_user);
+      localStorage.setItem("userRole", "company");
+      if (result.company && result.company.id_company) {
+        localStorage.setItem("companyId", result.company.id_company);
+      } else if (result.userData && result.userData.id_company) {
+        localStorage.setItem("companyId", result.userData.id_company);
+      }
       alert("Empresa registrada correctamente");
       return true;
     } else {

@@ -1,6 +1,7 @@
 const divLogIn = document.getElementById("divLogin");
 const divPerfil = document.getElementById("divProfileBadge");
 const btnProfile = document.getElementById("profileBadge");
+const btnsMiProfile = document.querySelectorAll(".nav-mi-perfil");
 
 const isToken = localStorage.getItem("token");
 
@@ -28,11 +29,13 @@ const logOut = async () => {
 };
 
 if (isToken) {
-  divLogIn.classList.add("d-none");
-  divPerfil.classList.remove("d-none");
+  if (divLogIn) divLogIn.classList.add("d-none");
+  if (divPerfil) divPerfil.classList.remove("d-none");
   const userId = localStorage.getItem("userId");
 
-  btnProfile.href = `./profile.html?id=${userId}`;
+  if (btnProfile) {
+    btnProfile.href = `./profile.html?id=${userId}`;
+  }
 
   const btnLogout = document.getElementById("btnLogout");
   if (btnLogout) {
@@ -41,7 +44,17 @@ if (isToken) {
       if (result) window.location.href = "./home.html";
     });
   }
+
+  const userRole = localStorage.getItem("userRole");
+
+  btnsMiProfile.forEach((btn) => {
+    if (userRole === "candidate") {
+      btn.href = `./profileEdit.html`;
+    } else if (userRole === "company") {
+      btn.href = `./companyEdit.html`;
+    }
+  });
 } else {
-  divLogIn.classList.remove("d-none");
-  divPerfil.classList.add("d-none");
+  if (divLogIn) divLogIn.classList.remove("d-none");
+  if (divPerfil) divPerfil.classList.add("d-none");
 }

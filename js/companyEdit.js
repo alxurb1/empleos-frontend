@@ -1,4 +1,3 @@
-const API_URL = "http://localhost:3000";
 const companyId = localStorage.getItem("companyId");
 const token = localStorage.getItem("token");
 
@@ -73,16 +72,16 @@ const loadProfile = () => {
 const saveProfile = () => {
   const body = {
     name: document.getElementById("input-nombre").value.trim(),
-    sector: document.getElementById("input-sector").value.trim(),
-    size: document.getElementById("input-tamano").value.trim(),
-    location: document.getElementById("input-ubicacion").value.trim(),
-    website: document.getElementById("input-website").value.trim(),
-    email: document.getElementById("input-email").value.trim(),
-    linkedin_url: document.getElementById("input-linkedin").value.trim(),
-    phone: document.getElementById("input-telefono").value.trim(),
-    description: document.getElementById("input-descripcion").value.trim(),
-    mission: document.getElementById("input-mision").value.trim(),
-    vision: document.getElementById("input-vision").value.trim(),
+    sector: document.getElementById("input-sector").value.trim() || null,
+    size: document.getElementById("input-tamano").value.trim() || null,
+    location: document.getElementById("input-ubicacion").value.trim() || null,
+    website: document.getElementById("input-website").value.trim() || null,
+    email: document.getElementById("input-email").value.trim() || null,
+    linkedin_url: document.getElementById("input-linkedin").value.trim() || null,
+    phone: document.getElementById("input-telefono").value.trim() || null,
+    description: document.getElementById("input-descripcion").value.trim() || null,
+    mission: document.getElementById("input-mision").value.trim() || null,
+    vision: document.getElementById("input-vision").value.trim() || null,
   };
 
   fetch(`${API_URL}/companies/${companyId}`, {
@@ -90,9 +89,15 @@ const saveProfile = () => {
     headers,
     body: JSON.stringify(body),
   })
-    .then((reply) => reply.json())
+    .then(async (reply) => {
+      if (!reply.ok) {
+        const err = await reply.json();
+        throw new Error(err.message || "Error en el servidor");
+      }
+      return reply.json();
+    })
     .then(() => alert("Perfil actualizado correctamente."))
-    .catch(() => alert("Error al guardar el perfil."));
+    .catch((err) => alert("Error al guardar el perfil: " + err.message));
 };
 
 // ----------------------------------VACANTES------------------------------
