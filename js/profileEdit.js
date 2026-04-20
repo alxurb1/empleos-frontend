@@ -1,4 +1,4 @@
-const userId = localStorage.getItem("id_user");
+const userId = localStorage.getItem("userId");
 const token = localStorage.getItem("token");
 
 if (!userId) {
