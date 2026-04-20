@@ -42,6 +42,7 @@
           >
             <input
               type="text"
+              id="navbar-search"
               class="form-control rounded-2"
               placeholder="Buscar empleos, empresas..."
             />
@@ -78,17 +79,17 @@
           </div>
           <ul class="navbar-nav d-lg-none mt-3 border-top pt-3">
             <li class="nav-item">
-              <a href="#" class="nav-link text-dark"
+              <a href="./search_results.html" class="nav-link text-dark"
                 ><i class="bi bi-search"></i> Buscar Empleo</a
               >
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link text-dark"
+              <a href="./resources.html" class="nav-link text-dark"
                 ><i class="bi bi-stack"></i> Recursos</a
               >
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link text-dark"
+              <a href="./forums_and_ratings.html" class="nav-link text-dark"
                 ><i class="bi bi-bookmark-star-fill"></i> Valoraciones</a
               >
             </li>
@@ -101,13 +102,16 @@
         </div>
       </nav>
       <div class="d-none d-lg-flex gap-5 px-5 py-3 border-top">
-        <a href="#" class="text-dark text-decoration-none">
+        <a href="./search_results.html" class="text-dark text-decoration-none">
           <i class="bi bi-search"></i> Buscar Empleo
         </a>
-        <a href="#" class="text-dark text-decoration-none">
+        <a href="./resources.html" class="text-dark text-decoration-none">
           <i class="bi bi-stack"></i> Recursos
         </a>
-        <a href="#" class="text-dark text-decoration-none">
+        <a
+          href="./forums_and_ratings.html"
+          class="text-dark text-decoration-none"
+        >
           <i class="bi bi-bookmark-star-fill"></i> Valoraciones
         </a>
         <a href="#" class="text-dark text-decoration-none">
@@ -127,6 +131,7 @@
           <div class="col-md-4">
             <input
               type="text"
+              id="navbar-search"
               class="form-control"
               id="searchKeyword"
               placeholder="Puesto o Palabra Clave"
@@ -257,5 +262,6 @@
     <script src="/js/config.js"></script>
     <script src="/js/navbar.js"></script>
     <script src="/js/home.js"></script>
+    <script src="../js/searchNavBar.js"></script>
   </body>
 </html>
