@@ -1,4 +1,3 @@
-const API_URL = "http://localhost:3000";
 const formCandidato = document.getElementById("formRegisterCandidate");
 const formEmpresa = document.getElementById("formRegisterCompany");
 
@@ -48,6 +47,9 @@ const crearCuentaCandidato = async () => {
     });
 
     if (response.ok) {
+      const result = await response.json();
+      localStorage.setItem("token", result.token);
+      localStorage.setItem("userId", result.userData.id_user);
       alert("Usuario registrado correctamente");
       return true;
     } else {
@@ -101,6 +103,9 @@ const crearCuentaEmpresa = async () => {
     });
 
     if (response.ok) {
+      const result = await response.json();
+      localStorage.setItem("token", result.token);
+      localStorage.setItem("userId", result.userData.id_user);
       alert("Empresa registrada correctamente");
       return true;
     } else {
