@@ -96,7 +96,7 @@ const renderJobs = (jobs) => {
               ${badge ? `<span class="badge bg-dark">${badge}</span>` : ""}
               <span class="text-muted" style="font-size:11px;">${timeAgo(job.published_at)}</span>
               <button class="btn text-light" style="background-color:blue;"
-                onclick="window.location.href='detalle-empleo.html?id=${job.id_vacancy}'">
+                onclick="window.location.href='vacancy_details.html?id=${job.id_vacancy}'">
                 Ver Detalles
               </button>
             </div>
