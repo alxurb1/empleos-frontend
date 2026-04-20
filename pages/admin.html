@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panel de Administración</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+  </head>
+  <body class="bg-light">
+    <!-- NAVBAR -->
+    <section>
+      <nav class="navbar navbar-expand-lg bg-body-secondary px-3 px-lg-5 py-3">
+        <a class="navbar-brand fw-bold fs-4" href="#" style="color: blue">
+          <i class="bi bi-briefcase"></i> Empleos
+        </a>
+        <button
+          class="navbar-toggler ms-auto"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div
+            class="mx-auto my-2 my-lg-0"
+            style="max-width: 420px; width: 100%"
+          >
+            <input
+              type="text"
+              class="form-control rounded-2"
+              placeholder="Buscar empleos, empresas..."
+            />
+          </div>
+          <div
+            class="d-flex flex-column flex-lg-row gap-2 mt-2 mt-lg-0 ms-lg-3"
+          >
+            <a href="#">
+              <button class="btn btn-light fw-bold w-100" style="color: blue">
+                Iniciar Sesión
+              </button>
+            </a>
+            <a href="#">
+              <button
+                class="btn fw-bold text-light w-100"
+                style="background-color: blue"
+              >
+                Registrarse
+              </button>
+            </a>
+          </div>
+          <ul class="navbar-nav d-lg-none mt-3 border-top pt-3">
+            <li class="nav-item">
+              <a href="#" class="nav-link text-dark"
+                ><i class="bi bi-search"></i> Buscar Empleo</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link text-dark"
+                ><i class="bi bi-stack"></i> Recursos</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link text-dark"
+                ><i class="bi bi-bookmark-star-fill"></i> Valoraciones</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link text-dark"
+                ><i class="bi bi-person-fill"></i> Mi Perfil</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="d-none d-lg-flex gap-5 px-5 py-3 border-top">
+        <a href="#" class="text-dark text-decoration-none">
+          <i class="bi bi-search"></i> Buscar Empleo
+        </a>
+        <a href="#" class="text-dark text-decoration-none">
+          <i class="bi bi-stack"></i> Recursos
+        </a>
+        <a href="#" class="text-dark text-decoration-none">
+          <i class="bi bi-bookmark-star-fill"></i> Valoraciones
+        </a>
+        <a href="#" class="text-dark text-decoration-none">
+          <i class="bi bi-person-fill"></i> Mi Perfil
+        </a>
+      </div>
+    </section>
+    <div class="container py-4">
+      <h4 class="fw-bold mb-1">Panel de Administración</h4>
+      <p class="text-muted mb-4">Gestión Completa del Sistema</p>
+
+      <!-- Tarjetas  -->
+      <div class="row g-3 mb-4">
+        <div class="col-6 col-md-3">
+          <div class="card border-0 shadow-sm">
+            <div
+              class="card-body d-flex justify-content-between align-items-center"
+            >
+              <div>
+                <p class="text-muted small mb-0">Total Usuarios</p>
+                <h5 class="fw-bold mb-0" id="total-usuarios">—</h5>
+              </div>
+              <i class="bi bi-people-fill fs-2"></i>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="card border-0 shadow-sm">
+            <div
+              class="card-body d-flex justify-content-between align-items-center"
+            >
+              <div>
+                <p class="text-muted small mb-0">Total Empresas</p>
+                <h5 class="fw-bold mb-0" id="total-empresas">—</h5>
+              </div>
+              <i class="bi bi-building fs-2"></i>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="card border-0 shadow-sm">
+            <div
+              class="card-body d-flex justify-content-between align-items-center"
+            >
+              <div>
+                <p class="text-muted small mb-0">Vacantes Activas</p>
+                <h5 class="fw-bold mb-0" id="total-vacantes">—</h5>
+              </div>
+              <i class="bi bi-person-check-fill fs-2"></i>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="card border-0 shadow-sm">
+            <div
+              class="card-body d-flex justify-content-between align-items-center"
+            >
+              <div>
+                <p class="text-muted small mb-0">Total Foros</p>
+                <h5 class="fw-bold mb-0" id="total-foros">—</h5>
+              </div>
+              <i class="bi bi-chat-square-text-fill fs-2"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <ul class="nav nav-tabs mb-3" id="adminTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link active"
+            data-bs-toggle="tab"
+            data-bs-target="#usuarios"
+            type="button"
+            role="tab"
+          >
+            Usuarios
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            data-bs-toggle="tab"
+            data-bs-target="#empresas"
+            type="button"
+            role="tab"
+          >
+            Empresas
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            data-bs-toggle="tab"
+            data-bs-target="#vacantes"
+            type="button"
+            role="tab"
+          >
+            Vacantes
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            data-bs-toggle="tab"
+            data-bs-target="#comentarios"
+            type="button"
+            role="tab"
+          >
+            Comentarios
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            data-bs-toggle="tab"
+            data-bs-target="#analiticas"
+            type="button"
+            role="tab"
+          >
+            Analíticas
+          </button>
+        </li>
+      </ul>
+
+      <div class="tab-content">
+        <!-- Usuarios -->
+        <div class="tab-pane fade show active" id="usuarios" role="tabpanel">
+          <div class="card border-0 shadow-sm">
+            <div class="card-body">
+              <h6 class="fw-bold mb-3">Gestionar Usuarios</h6>
+              <div class="input-group mb-3" style="max-width: 300px">
+                <span class="input-group-text bg-light border-0"
+                  ><i class="bi bi-search text-muted"></i
+                ></span>
+                <input
+                  id="buscar-usuario"
+                  type="text"
+                  class="form-control bg-light border-0"
+                  placeholder="Buscar Usuarios..."
+                />
+              </div>
+              <div class="table-responsive">
+                <table class="table table-borderless align-middle">
+                  <thead>
+                    <tr class="text-muted small">
+                      <th>Usuario</th>
+                      <th>Correo</th>
+                      <th>Tipo</th>
+                      <th>Registro</th>
+                      <th>Estado</th>
+                      <th>Acciones</th>
+                    </tr>
+                  </thead>
+                  <tbody id="tabla-usuarios"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Empresas -->
+        <div class="tab-pane fade" id="empresas" role="tabpanel">
+          <div class="card border-0 shadow-sm">
+            <div class="card-body">
+              <h6 class="fw-bold mb-3">Gestionar Empresas</h6>
+              <div class="input-group mb-3" style="max-width: 300px">
+                <span class="input-group-text bg-light border-0"
+                  ><i class="bi bi-search text-muted"></i
+                ></span>
+                <input
+                  id="buscar-empresa"
+                  type="text"
+                  class="form-control bg-light border-0"
+                  placeholder="Buscar Empresas..."
+                />
+              </div>
+              <div class="table-responsive">
+                <table class="table table-borderless align-middle">
+                  <thead>
+                    <tr class="text-muted small">
+                      <th>Empresa</th>
+                      <th>Sector</th>
+                      <th>Ubicación</th>
+                      <th>Estado</th>
+                      <th>Acciones</th>
+                    </tr>
+                  </thead>
+                  <tbody id="tabla-empresas"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vacantes -->
+        <div class="tab-pane fade" id="vacantes" role="tabpanel">
+          <div class="card border-0 shadow-sm">
+            <div class="card-body">
+              <h6 class="fw-bold mb-3">Gestionar Vacantes</h6>
+              <div class="input-group mb-3" style="max-width: 300px">
+                <span class="input-group-text bg-light border-0"
+                  ><i class="bi bi-search text-muted"></i
+                ></span>
+                <input
+                  id="buscar-vacante"
+                  type="text"
+                  class="form-control bg-light border-0"
+                  placeholder="Buscar Vacantes..."
+                />
+              </div>
+              <div class="table-responsive">
+                <table class="table table-borderless align-middle">
+                  <thead>
+                    <tr class="text-muted small">
+                      <th>Título</th>
+                      <th>Empresa</th>
+                      <th>Publicado</th>
+                      <th>Estado</th>
+                      <th>Acciones</th>
+                    </tr>
+                  </thead>
+                  <tbody id="tabla-vacantes"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Comentarios -->
+        <div class="tab-pane fade" id="comentarios" role="tabpanel">
+          <div class="card border-0 shadow-sm">
+            <div class="card-body">
+              <h6 class="fw-bold mb-3">Moderación Comentarios</h6>
+              <div id="lista-comentarios"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Analíticas -->
+        <div class="tab-pane fade" id="analiticas" role="tabpanel">
+          <div class="card border-0 shadow-sm">
+            <div class="card-body">
+              <h6 class="fw-bold mb-4">Analíticas del Sistema</h6>
+              <div class="row g-3 mb-4">
+                <div class="col-md-4">
+                  <p class="text-muted small mb-0">Total Postulaciones</p>
+                  <h4 class="fw-bold mb-0" id="analitica-postulaciones">—</h4>
+                </div>
+                <div class="col-md-4">
+                  <p class="text-muted small mb-0">Reseñas Pendientes</p>
+                  <h4 class="fw-bold mb-0" id="analitica-resenas">—</h4>
+                </div>
+                <div class="col-md-4">
+                  <p class="text-muted small mb-0">Vacantes Activas</p>
+                  <h4 class="fw-bold mb-0" id="analitica-vacantes">—</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- FOOTER -->
+    <section>
+      <footer
+        class="text-light px-4 px-lg-5 py-4"
+        style="background-color: blue"
+      >
+        <div class="row g-4">
+          <div class="col-12 col-md-4">
+            <p class="fs-4 fw-bold mb-2">
+              <i class="bi bi-briefcase"></i> Empleos
+            </p>
+            <p class="fs-6">
+              Conectamos talento con las mejores oportunidades profesionales. Tu
+              próximo empleo está aquí.
+            </p>
+          </div>
+          <div class="col-12 col-md-4">
+            <p class="fs-5 fw-bold mb-2">Enlaces Rápidos</p>
+            <ul class="list-unstyled mb-0">
+              <li class="mb-1">
+                <a href="#" class="text-light text-decoration-none">Inicio</a>
+              </li>
+              <li class="mb-1">
+                <a href="#" class="text-light text-decoration-none"
+                  >Buscar Trabajo</a
+                >
+              </li>
+              <li class="mb-1">
+                <a href="#" class="text-light text-decoration-none">Recursos</a>
+              </li>
+              <li class="mb-1">
+                <a href="#" class="text-light text-decoration-none">Foros</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-12 col-md-4">
+            <p class="fs-5 fw-bold mb-2">Contacto</p>
+            <ul class="list-unstyled mb-0">
+              <li class="mb-1">
+                <i class="bi bi-geo-alt-fill me-1"></i> San Salvador (Remoto)
+              </li>
+              <li class="mb-1">
+                <i class="bi bi-telephone-fill me-1"></i> 1234 5678
+              </li>
+              <li class="mb-1">
+                <i class="bi bi-envelope-fill me-1"></i> correo@ejemplo.com
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </section>
+    <script src="../js/admin.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
