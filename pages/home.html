@@ -15,7 +15,6 @@
   </head>
 
   <body class="bg-light">
-    <!-- NAVBAR -->
     <section>
       <nav class="navbar navbar-expand-lg bg-body-secondary px-3 px-lg-5 py-3">
         <a
@@ -119,8 +118,6 @@
           <i class="bi bi-person-fill"></i> Mi Perfil
         </a>
       </div>
-      <script src="/js/config.js"></script>
-      <script src="/js/navbar.js"></script>
     </section>
 
     <div class="text-white text-center py-5" style="background-color: blue">
@@ -136,56 +133,57 @@
               type="text"
               id="navbar-search"
               class="form-control"
+              id="searchKeyword"
               placeholder="Puesto o Palabra Clave"
             />
           </div>
           <div class="col-md-3">
-            <select class="form-select">
-              <option disabled selected>Ubicación</option>
-              <option>Ahuachapan</option>
-              <option>Cabañas</option>
-              <option>Chalatenango</option>
-              <option>Cuscatla</option>
-              <option>La Unión</option>
-              <option>La Libertad</option>
-              <option>La Paz</option>
-              <option>Santa Ana</option>
-              <option>San Salvador</option>
-              <option>San Vicente</option>
-              <option>San Miguel</option>
-              <option>Sonsonate</option>
-              <option>Morazán</option>
-              <option>Usulutan</option>
+            <select class="form-select" id="searchLocation">
+              <option value="" disabled selected>Ubicación</option>
+              <option value="Ahuachapan">Ahuachapan</option>
+              <option value="Cabañas">Cabañas</option>
+              <option value="Chalatenango">Chalatenango</option>
+              <option value="Cuscatlan">Cuscatlán</option>
+              <option value="La Unión">La Unión</option>
+              <option value="La Libertad">La Libertad</option>
+              <option value="La Paz">La Paz</option>
+              <option value="Santa Ana">Santa Ana</option>
+              <option value="San Salvador">San Salvador</option>
+              <option value="San Vicente">San Vicente</option>
+              <option value="San Miguel">San Miguel</option>
+              <option value="Sonsonate">Sonsonate</option>
+              <option value="Morazán">Morazán</option>
+              <option value="Usulutan">Usulután</option>
             </select>
           </div>
           <div class="col-md-3">
-            <select class="form-select">
-              <option disabled selected>Tipo de Trabajo</option>
-              <option>Presencial</option>
-              <option>Hibrido</option>
-              <option>Remoto</option>
+            <select class="form-select" id="searchType">
+              <option value="" disabled selected>Tipo de Trabajo</option>
+              <option value="Presencial">Presencial</option>
+              <option value="Hibrido">Híbrido</option>
+              <option value="Remoto">Remoto</option>
             </select>
           </div>
           <div class="col-md-2">
-            <select class="form-select">
-              <option disabled selected>Rango Salarial</option>
-              <option>$400.00 - $600.00</option>
-              <option>$600.00 - $1000.00</option>
-              <option>$1,500 +</option>
+            <select class="form-select" id="searchSalary">
+              <option value="" disabled selected>Rango Salarial</option>
+              <option value="400-600">$400.00 - $600.00</option>
+              <option value="600-1000">$600.00 - $1000.00</option>
+              <option value="1500+">$1,500 +</option>
             </select>
           </div>
         </div>
         <div class="row g-2">
           <div class="col-md-9">
-            <select class="form-select">
-              <option disabled selected>Nivel de Experiencia</option>
-              <option>Junior</option>
-              <option>Mid Senior</option>
-              <option>Senior</option>
+            <select class="form-select" id="searchExperience">
+              <option value="" disabled selected>Nivel de Experiencia</option>
+              <option value="Junior">Junior</option>
+              <option value="Mid Senior">Mid Senior</option>
+              <option value="Senior">Senior</option>
             </select>
           </div>
           <div class="col-md-3">
-            <button class="btn text-light" style="background-color: blue">
+            <button class="btn text-light w-100" id="btnSearch" style="background-color: blue">
               <i class="bi bi-search me-1"></i>Buscar Empleo
             </button>
           </div>
@@ -204,114 +202,10 @@
         </button>
       </div>
 
-      <div class="row g-3">
-        <div class="col-md-4">
-          <div class="card border rounded-3 p-3 h-100">
-            <div class="d-flex gap-3 mb-2">
-              <div
-                class="bg-primary bg-opacity-10 rounded-2 d-flex align-items-center justify-content-center text-primary"
-                style="width: 42px; height: 42px"
-              >
-                <i class="bi bi-layers fs-5"></i>
-              </div>
-              <div>
-                <p class="fw-bold mb-0 small">
-                  Desarrollador Full Stack Senior
-                </p>
-                <small class="text-muted">FullTech Solutions</small>
-              </div>
-            </div>
-            <small class="text-muted d-block"
-              ><i class="bi bi-geo-alt me-1"></i>San Salvador, El
-              Salvador</small
-            >
-            <small class="text-muted d-block"
-              ><i class="bi bi-briefcase me-1"></i>Tiempo Completo</small
-            >
-            <small class="text-primary fw-bold d-block mt-1"
-              ><i class="bi bi-currency-dollar"></i>$1K - $1.5K</small
-            >
-            <div class="d-flex justify-content-between align-items-center mt-3">
-              <small class="text-muted">Hace 2 días</small>
-              <button class="btn text-light" style="background-color: blue">
-                Ver Más
-              </button>
-            </div>
-          </div>
+      <div class="row g-3" id="vacanciesContainer">
         </div>
-
-        <div class="col-md-4">
-          <div class="card border rounded-3 p-3 h-100">
-            <div class="d-flex gap-3 mb-2">
-              <div
-                class="bg-primary bg-opacity-10 rounded-2 d-flex align-items-center justify-content-center text-primary"
-                style="width: 42px; height: 42px"
-              >
-                <i class="bi bi-layers fs-5"></i>
-              </div>
-              <div>
-                <p class="fw-bold mb-0 small">
-                  Desarrollador Full Stack Senior
-                </p>
-                <small class="text-muted">FullTech Solutions</small>
-              </div>
-            </div>
-            <small class="text-muted d-block"
-              ><i class="bi bi-geo-alt me-1"></i>San Salvador, El
-              Salvador</small
-            >
-            <small class="text-muted d-block"
-              ><i class="bi bi-briefcase me-1"></i>Tiempo Completo</small
-            >
-            <small class="text-primary fw-bold d-block mt-1"
-              ><i class="bi bi-currency-dollar"></i>$1K - $1.5K</small
-            >
-            <div class="d-flex justify-content-between align-items-center mt-3">
-              <small class="text-muted">Hace 2 días</small>
-              <button class="btn text-light" style="background-color: blue">
-                Ver Más
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="card border rounded-3 p-3 h-100">
-            <div class="d-flex gap-3 mb-2">
-              <div
-                class="bg-primary bg-opacity-10 rounded-2 d-flex align-items-center justify-content-center text-primary"
-                style="width: 42px; height: 42px"
-              >
-                <i class="bi bi-layers fs-5"></i>
-              </div>
-              <div>
-                <p class="fw-bold mb-0 small">
-                  Desarrollador Full Stack Senior
-                </p>
-                <small class="text-muted">FullTech Solutions</small>
-              </div>
-            </div>
-            <small class="text-muted d-block"
-              ><i class="bi bi-geo-alt me-1"></i>San Salvador, El
-              Salvador</small
-            >
-            <small class="text-muted d-block"
-              ><i class="bi bi-briefcase me-1"></i>Tiempo Completo</small
-            >
-            <small class="text-primary fw-bold d-block mt-1"
-              ><i class="bi bi-currency-dollar"></i>$1K - $1.5K</small
-            >
-            <div class="d-flex justify-content-between align-items-center mt-3">
-              <small class="text-muted">Hace 2 días</small>
-              <button class="btn text-light" style="background-color: blue">
-                Ver Más
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-    <!-- FOOTER -->
+
     <section>
       <footer
         class="text-light px-4 px-lg-5 py-4"
@@ -365,6 +259,9 @@
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/config.js"></script>
+    <script src="/js/navbar.js"></script>
+    <script src="/js/home.js"></script>
     <script src="../js/searchNavBar.js"></script>
   </body>
 </html>
