@@ -19,7 +19,11 @@
     <!-- NAVBAR -->
     <section>
       <nav class="navbar navbar-expand-lg bg-body-secondary px-3 px-lg-5 py-3">
-        <a class="navbar-brand fw-bold fs-4" href="#" style="color: blue">
+        <a
+          class="navbar-brand fw-bold fs-4"
+          href="./home.html"
+          style="color: blue"
+        >
           <i class="bi bi-briefcase"></i> Empleos
         </a>
         <button
@@ -40,19 +44,21 @@
           >
             <input
               type="text"
+              id="navbar-search"
               class="form-control rounded-2"
               placeholder="Buscar empleos, empresas..."
             />
           </div>
           <div
             class="d-flex flex-column flex-lg-row gap-2 mt-2 mt-lg-0 ms-lg-3"
+            id="divLogin"
           >
-            <a href="#">
+            <a href="./login.html">
               <button class="btn btn-light fw-bold w-100" style="color: blue">
                 Iniciar Sesión
               </button>
             </a>
-            <a href="#">
+            <a href="./register.html">
               <button
                 class="btn fw-bold text-light w-100"
                 style="background-color: blue"
@@ -61,19 +67,31 @@
               </button>
             </a>
           </div>
+          <div
+            class="d-flex flex-column flex-lg-row gap-2 mt-2 mt-lg-0 ms-lg-3 d-none"
+            id="divProfileBadge"
+          >
+            <a
+              href="./profile.html"
+              class="text-decoration-none"
+              id="profileBadge"
+            >
+              <i class="bi bi-person-fill"></i>
+            </a>
+          </div>
           <ul class="navbar-nav d-lg-none mt-3 border-top pt-3">
             <li class="nav-item">
-              <a href="#" class="nav-link text-dark"
+              <a href="./search_results.html" class="nav-link text-dark"
                 ><i class="bi bi-search"></i> Buscar Empleo</a
               >
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link text-dark"
+              <a href="./resources.html" class="nav-link text-dark"
                 ><i class="bi bi-stack"></i> Recursos</a
               >
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link text-dark"
+              <a href="./forums_and_ratings.html" class="nav-link text-dark"
                 ><i class="bi bi-bookmark-star-fill"></i> Valoraciones</a
               >
             </li>
@@ -86,19 +104,24 @@
         </div>
       </nav>
       <div class="d-none d-lg-flex gap-5 px-5 py-3 border-top">
-        <a href="#" class="text-dark text-decoration-none">
+        <a href="./search_results.html" class="text-dark text-decoration-none">
           <i class="bi bi-search"></i> Buscar Empleo
         </a>
-        <a href="#" class="text-dark text-decoration-none">
+        <a href="./resources.html" class="text-dark text-decoration-none">
           <i class="bi bi-stack"></i> Recursos
         </a>
-        <a href="#" class="text-dark text-decoration-none">
+        <a
+          href="./forums_and_ratings.html"
+          class="text-dark text-decoration-none"
+        >
           <i class="bi bi-bookmark-star-fill"></i> Valoraciones
         </a>
         <a href="#" class="text-dark text-decoration-none">
           <i class="bi bi-person-fill"></i> Mi Perfil
         </a>
       </div>
+      <script src="/js/config.js"></script>
+      <script src="/js/navbar.js"></script>
     </section>
     <!-- ENTREVISTAS -->
     <div class="container py-3">
@@ -455,5 +478,6 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
+    <script src="../js/searchNavBar.js"></script>
   </body>
 </html>

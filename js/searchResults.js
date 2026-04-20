@@ -3,6 +3,13 @@ let filteredJobs = [];
 let currentPage = 1;
 const jobsPerPage = 6;
 
+const urlParams = new URLSearchParams(window.location.search);
+const queryParam = urlParams.get("q");
+if (queryParam) {
+  const searchInput = document.getElementById("search-input");
+  if (searchInput) searchInput.value = queryParam;
+}
+
 const formatSalary = (min, max) => {
   if (!min && !max) return null;
   if (min && max)
