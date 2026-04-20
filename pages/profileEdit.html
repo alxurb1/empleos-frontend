@@ -18,7 +18,7 @@
     <!-- NAVBAR -->
     <section>
       <nav class="navbar navbar-expand-lg bg-body-secondary px-3 px-lg-5 py-3">
-        <a class="navbar-brand fw-bold fs-4" href="#" style="color: blue">
+        <a class="navbar-brand fw-bold fs-4" href="./home.html" style="color: blue">
           <i class="bi bi-briefcase"></i> Empleos
         </a>
         <button
@@ -45,19 +45,28 @@
           </div>
           <div
             class="d-flex flex-column flex-lg-row gap-2 mt-2 mt-lg-0 ms-lg-3"
+            id="divLogin"
           >
-            <a href="#">
+            <a href="./login.html">
               <button class="btn btn-light fw-bold w-100" style="color: blue">
                 Iniciar Sesión
               </button>
             </a>
-            <a href="#">
+            <a href="./register.html">
               <button
                 class="btn fw-bold text-light w-100"
                 style="background-color: blue"
               >
                 Registrarse
               </button>
+            </a>
+          </div>
+          <div
+            class="d-flex flex-column flex-lg-row gap-2 mt-2 mt-lg-0 ms-lg-3 d-none"
+            id="divProfileBadge"
+          >
+            <a href="./profile.html" class="text-decoration-none" id="profileBadge">
+              <i class="bi bi-person-fill"></i>
             </a>
           </div>
           <ul class="navbar-nav d-lg-none mt-3 border-top pt-3">
@@ -98,6 +107,7 @@
           <i class="bi bi-person-fill"></i> Mi Perfil
         </a>
       </div>
+      <script src="/js/navbar.js"></script>
     </section>
     <div class="container py-4">
       <h4 class="fw-bold mb-1">Mi Perfil</h4>
@@ -148,6 +158,7 @@
                 <li class="nav-item" role="presentation">
                   <button
                     class="nav-link active"
+                    id="info-tab"
                     data-bs-toggle="tab"
                     data-bs-target="#info"
                     type="button"
@@ -159,6 +170,7 @@
                 <li class="nav-item" role="presentation">
                   <button
                     class="nav-link"
+                    id="curriculum-tab"
                     data-bs-toggle="tab"
                     data-bs-target="#curriculum"
                     type="button"
@@ -170,6 +182,7 @@
                 <li class="nav-item" role="presentation">
                   <button
                     class="nav-link"
+                    id="postulaciones-tab"
                     data-bs-toggle="tab"
                     data-bs-target="#postulaciones"
                     type="button"
@@ -181,6 +194,7 @@
                 <li class="nav-item" role="presentation">
                   <button
                     class="nav-link"
+                    id="alertas-tab"
                     data-bs-toggle="tab"
                     data-bs-target="#alertas"
                     type="button"
@@ -191,7 +205,7 @@
                 </li>
               </ul>
 
-              <div class="tab-content">
+              <div class="tab-content" id="profileTabsContent">
                 <!-- Información -->
                 <div
                   class="tab-pane fade show active"
@@ -210,6 +224,7 @@
                       class="form-control form-control-sm bg-light border-0"
                     />
                   </div>
+
                   <div class="row g-3 mb-3">
                     <div class="col-md-6">
                       <label class="form-label small text-muted">Email</label>
@@ -230,6 +245,7 @@
                       />
                     </div>
                   </div>
+
                   <div class="row g-3 mb-3">
                     <div class="col-md-6">
                       <label class="form-label small text-muted"
@@ -252,6 +268,7 @@
                       />
                     </div>
                   </div>
+
                   <div class="mb-3">
                     <label class="form-label small text-muted"
                       >Título Profesional</label
@@ -262,6 +279,7 @@
                       class="form-control form-control-sm bg-light border-0"
                     />
                   </div>
+
                   <div class="mb-3">
                     <label class="form-label small text-muted"
                       >Biografía Personal</label

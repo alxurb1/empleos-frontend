@@ -1,287 +1,363 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home Page</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-</head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+  </head>
 
-<body class="bg-light">
+  <body class="bg-light">
     <!-- NAVBAR -->
     <section>
-        <nav class="navbar navbar-expand-lg bg-body-secondary px-3 px-lg-5 py-3">
-            <a class="navbar-brand fw-bold fs-4" href="#" style="color: blue;">
-            <i class="bi bi-briefcase"></i> Empleos
+      <nav class="navbar navbar-expand-lg bg-body-secondary px-3 px-lg-5 py-3">
+        <a
+          class="navbar-brand fw-bold fs-4"
+          href="./home.html"
+          style="color: blue"
+        >
+          <i class="bi bi-briefcase"></i> Empleos
+        </a>
+        <button
+          class="navbar-toggler ms-auto"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div
+            class="mx-auto my-2 my-lg-0"
+            style="max-width: 420px; width: 100%"
+          >
+            <input
+              type="text"
+              class="form-control rounded-2"
+              placeholder="Buscar empleos, empresas..."
+            />
+          </div>
+          <div
+            class="d-flex flex-column flex-lg-row gap-2 mt-2 mt-lg-0 ms-lg-3"
+            id="divLogin"
+          >
+            <a href="./login.html">
+              <button class="btn btn-light fw-bold w-100" style="color: blue">
+                Iniciar Sesión
+              </button>
             </a>
-            <button
-            class="navbar-toggler ms-auto"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarCollapse"
-            aria-controls="navbarCollapse"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
+            <a href="./register.html">
+              <button
+                class="btn fw-bold text-light w-100"
+                style="background-color: blue"
+              >
+                Registrarse
+              </button>
+            </a>
+          </div>
+          <div
+            class="d-flex flex-column flex-lg-row gap-2 mt-2 mt-lg-0 ms-lg-3 d-none"
+            id="divProfileBadge"
+          >
+            <a
+              href="./profile.html"
+              class="text-decoration-none"
+              id="profileBadge"
             >
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="mx-auto my-2 my-lg-0" style="max-width: 420px; width: 100%;">
-                <input
-                type="text"
-                class="form-control rounded-2"
-                placeholder="Buscar empleos, empresas..."
-                />
-            </div>
-            <div class="d-flex flex-column flex-lg-row gap-2 mt-2 mt-lg-0 ms-lg-3">
-                <a href="#">
-                <button class="btn btn-light fw-bold w-100" style="color: blue;">
-                    Iniciar Sesión
-                </button>
-                </a>
-                <a href="#">
-                <button class="btn fw-bold text-light w-100" style="background-color: blue;">
-                    Registrarse
-                </button>
-                </a>
-            </div>
-            <ul class="navbar-nav d-lg-none mt-3 border-top pt-3">
-                <li class="nav-item">
-                <a href="#" class="nav-link text-dark"><i class="bi bi-search"></i> Buscar Empleo</a>
-                </li>
-                <li class="nav-item">
-                <a href="#" class="nav-link text-dark"><i class="bi bi-stack"></i> Recursos</a>
-                </li>
-                <li class="nav-item">
-                <a href="#" class="nav-link text-dark"><i class="bi bi-bookmark-star-fill"></i> Valoraciones</a>
-                </li>
-                <li class="nav-item">
-                <a href="#" class="nav-link text-dark"><i class="bi bi-person-fill"></i> Mi Perfil</a>
-                </li>
-            </ul>
-            </div>
-        </nav>
-        <div class="d-none d-lg-flex gap-5 px-5 py-3 border-top">
-            <a href="#" class="text-dark text-decoration-none">
-            <i class="bi bi-search"></i> Buscar Empleo
+              <i class="bi bi-person-fill"></i>
             </a>
-            <a href="#" class="text-dark text-decoration-none">
-            <i class="bi bi-stack"></i> Recursos
-            </a>
-            <a href="#" class="text-dark text-decoration-none">
-            <i class="bi bi-bookmark-star-fill"></i> Valoraciones
-            </a>
-            <a href="#" class="text-dark text-decoration-none">
-            <i class="bi bi-person-fill"></i> Mi Perfil
-            </a>
+          </div>
+          <ul class="navbar-nav d-lg-none mt-3 border-top pt-3">
+            <li class="nav-item">
+              <a href="#" class="nav-link text-dark"
+                ><i class="bi bi-search"></i> Buscar Empleo</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link text-dark"
+                ><i class="bi bi-stack"></i> Recursos</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link text-dark"
+                ><i class="bi bi-bookmark-star-fill"></i> Valoraciones</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link text-dark"
+                ><i class="bi bi-person-fill"></i> Mi Perfil</a
+              >
+            </li>
+          </ul>
         </div>
+      </nav>
+      <div class="d-none d-lg-flex gap-5 px-5 py-3 border-top">
+        <a href="#" class="text-dark text-decoration-none">
+          <i class="bi bi-search"></i> Buscar Empleo
+        </a>
+        <a href="#" class="text-dark text-decoration-none">
+          <i class="bi bi-stack"></i> Recursos
+        </a>
+        <a href="#" class="text-dark text-decoration-none">
+          <i class="bi bi-bookmark-star-fill"></i> Valoraciones
+        </a>
+        <a href="#" class="text-dark text-decoration-none">
+          <i class="bi bi-person-fill"></i> Mi Perfil
+        </a>
+      </div>
+      <script src="/js/navbar.js"></script>
     </section>
 
-    <div class="text-white text-center py-5" style="background-color: blue;">
+    <div class="text-white text-center py-5" style="background-color: blue">
+      <h1 class="fw-bold fs-2">
+        Encuentra tu Próxima Oportunidad<br />Profesional
+      </h1>
+      <p class="fw-bold fs-2">Conectamos talento con las mejores empresas</p>
 
-        <h1 class="fw-bold fs-2">Encuentra tu Próxima Oportunidad<br>Profesional</h1>
-        <p class="fw-bold fs-2">Conectamos talento con las mejores empresas</p>
-
-        <div class="bg-white rounded-3 p-4 mx-auto mt-4" style="max-width:750px;">
-            <div class="row g-2 mb-2">
-                <div class="col-md-4">
-                    <input type="text" class="form-control" placeholder="Puesto o Palabra Clave">
-                </div>
-                <div class="col-md-3">
-                    <select class="form-select">
-                        <option disabled selected>Ubicación</option>
-                        <option>Ahuachapan</option>
-                        <option>Cabañas</option>
-                        <option>Chalatenango</option>
-                        <option>Cuscatla</option>
-                        <option>La Unión</option>
-                        <option>La Libertad</option>
-                        <option>La Paz</option>
-                        <option>Santa Ana</option>
-                        <option>San Salvador</option>
-                        <option>San Vicente</option>
-                        <option>San Miguel</option>
-                        <option>Sonsonate</option>
-                        <option>Morazán</option>
-                        <option>Usulutan</option>
-                    </select>
-                </div>
-                <div class="col-md-3">
-                    <select class="form-select">
-                        <option disabled selected>Tipo de Trabajo</option>
-                        <option>Presencial</option>
-                        <option>Hibrido</option>
-                        <option>Remoto</option>
-                    </select>
-                </div>
-                <div class="col-md-2">
-                    <select class="form-select">
-                        <option disabled selected>Rango Salarial</option>
-                        <option>$400.00 - $600.00</option>
-                        <option>$600.00 - $1000.00</option>
-                        <option>$1,500 +</option>
-                    </select>
-                </div>
-            </div>
-            <div class="row g-2">
-                <div class="col-md-9">
-                    <select class="form-select">
-                        <option disabled selected>Nivel de Experiencia</option>
-                        <option>Junior</option>
-                        <option>Mid Senior</option>
-                        <option>Senior</option>
-                    </select>
-                </div>
-                <div class="col-md-3">
-                    <button class="btn text-light" style="background-color: blue;">
-                        <i class="bi bi-search me-1"></i>Buscar Empleo
-                    </button>
-                </div>
-            </div>
+      <div class="bg-white rounded-3 p-4 mx-auto mt-4" style="max-width: 750px">
+        <div class="row g-2 mb-2">
+          <div class="col-md-4">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Puesto o Palabra Clave"
+            />
+          </div>
+          <div class="col-md-3">
+            <select class="form-select">
+              <option disabled selected>Ubicación</option>
+              <option>Ahuachapan</option>
+              <option>Cabañas</option>
+              <option>Chalatenango</option>
+              <option>Cuscatla</option>
+              <option>La Unión</option>
+              <option>La Libertad</option>
+              <option>La Paz</option>
+              <option>Santa Ana</option>
+              <option>San Salvador</option>
+              <option>San Vicente</option>
+              <option>San Miguel</option>
+              <option>Sonsonate</option>
+              <option>Morazán</option>
+              <option>Usulutan</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <select class="form-select">
+              <option disabled selected>Tipo de Trabajo</option>
+              <option>Presencial</option>
+              <option>Hibrido</option>
+              <option>Remoto</option>
+            </select>
+          </div>
+          <div class="col-md-2">
+            <select class="form-select">
+              <option disabled selected>Rango Salarial</option>
+              <option>$400.00 - $600.00</option>
+              <option>$600.00 - $1000.00</option>
+              <option>$1,500 +</option>
+            </select>
+          </div>
         </div>
+        <div class="row g-2">
+          <div class="col-md-9">
+            <select class="form-select">
+              <option disabled selected>Nivel de Experiencia</option>
+              <option>Junior</option>
+              <option>Mid Senior</option>
+              <option>Senior</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <button class="btn text-light" style="background-color: blue">
+              <i class="bi bi-search me-1"></i>Buscar Empleo
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="container py-5">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-            <div>
-                <h5 class="fw-bold mb-0">Empleos Destacados</h5>
-                <small class="text-muted">Gestión de Vacantes y Candidatos</small>
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <div>
+          <h5 class="fw-bold mb-0">Empleos Destacados</h5>
+          <small class="text-muted">Gestión de Vacantes y Candidatos</small>
+        </div>
+        <button class="btn text-light" style="background-color: blue">
+          Ver Todos
+        </button>
+      </div>
+
+      <div class="row g-3">
+        <div class="col-md-4">
+          <div class="card border rounded-3 p-3 h-100">
+            <div class="d-flex gap-3 mb-2">
+              <div
+                class="bg-primary bg-opacity-10 rounded-2 d-flex align-items-center justify-content-center text-primary"
+                style="width: 42px; height: 42px"
+              >
+                <i class="bi bi-layers fs-5"></i>
+              </div>
+              <div>
+                <p class="fw-bold mb-0 small">
+                  Desarrollador Full Stack Senior
+                </p>
+                <small class="text-muted">FullTech Solutions</small>
+              </div>
             </div>
-            <button class="btn text-light" style="background-color: blue;;">Ver Todos</button>
+            <small class="text-muted d-block"
+              ><i class="bi bi-geo-alt me-1"></i>San Salvador, El
+              Salvador</small
+            >
+            <small class="text-muted d-block"
+              ><i class="bi bi-briefcase me-1"></i>Tiempo Completo</small
+            >
+            <small class="text-primary fw-bold d-block mt-1"
+              ><i class="bi bi-currency-dollar"></i>$1K - $1.5K</small
+            >
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <small class="text-muted">Hace 2 días</small>
+              <button class="btn text-light" style="background-color: blue">
+                Ver Más
+              </button>
+            </div>
+          </div>
         </div>
 
-        <div class="row g-3">
-
-            <div class="col-md-4">
-                <div class="card border rounded-3 p-3 h-100">
-                    <div class="d-flex gap-3 mb-2">
-                        <div class="bg-primary bg-opacity-10 rounded-2 d-flex align-items-center justify-content-center text-primary"
-                            style="width:42px;height:42px;">
-                            <i class="bi bi-layers fs-5"></i>
-                        </div>
-                        <div>
-                            <p class="fw-bold mb-0 small">Desarrollador Full Stack Senior</p>
-                            <small class="text-muted">FullTech Solutions</small>
-                        </div>
-                    </div>
-                    <small class="text-muted d-block"><i class="bi bi-geo-alt me-1"></i>San Salvador, El
-                        Salvador</small>
-                    <small class="text-muted d-block"><i class="bi bi-briefcase me-1"></i>Tiempo Completo</small>
-                    <small class="text-primary fw-bold d-block mt-1"><i class="bi bi-currency-dollar"></i>$1K -
-                        $1.5K</small>
-                    <div class="d-flex justify-content-between align-items-center mt-3">
-                        <small class="text-muted">Hace 2 días</small>
-                        <button class="btn text-light" style="background-color: blue;">Ver Más</button>
-                    </div>
-                </div>
+        <div class="col-md-4">
+          <div class="card border rounded-3 p-3 h-100">
+            <div class="d-flex gap-3 mb-2">
+              <div
+                class="bg-primary bg-opacity-10 rounded-2 d-flex align-items-center justify-content-center text-primary"
+                style="width: 42px; height: 42px"
+              >
+                <i class="bi bi-layers fs-5"></i>
+              </div>
+              <div>
+                <p class="fw-bold mb-0 small">
+                  Desarrollador Full Stack Senior
+                </p>
+                <small class="text-muted">FullTech Solutions</small>
+              </div>
             </div>
-
-            <div class="col-md-4">
-                <div class="card border rounded-3 p-3 h-100">
-                    <div class="d-flex gap-3 mb-2">
-                        <div class="bg-primary bg-opacity-10 rounded-2 d-flex align-items-center justify-content-center text-primary"
-                            style="width:42px;height:42px;">
-                            <i class="bi bi-layers fs-5"></i>
-                        </div>
-                        <div>
-                            <p class="fw-bold mb-0 small">Desarrollador Full Stack Senior</p>
-                            <small class="text-muted">FullTech Solutions</small>
-                        </div>
-                    </div>
-                    <small class="text-muted d-block"><i class="bi bi-geo-alt me-1"></i>San Salvador, El
-                        Salvador</small>
-                    <small class="text-muted d-block"><i class="bi bi-briefcase me-1"></i>Tiempo Completo</small>
-                    <small class="text-primary fw-bold d-block mt-1"><i class="bi bi-currency-dollar"></i>$1K -
-                        $1.5K</small>
-                    <div class="d-flex justify-content-between align-items-center mt-3">
-                        <small class="text-muted">Hace 2 días</small>
-                        <button class="btn text-light" style="background-color: blue;">Ver Más</button>
-                    </div>
-                </div>
+            <small class="text-muted d-block"
+              ><i class="bi bi-geo-alt me-1"></i>San Salvador, El
+              Salvador</small
+            >
+            <small class="text-muted d-block"
+              ><i class="bi bi-briefcase me-1"></i>Tiempo Completo</small
+            >
+            <small class="text-primary fw-bold d-block mt-1"
+              ><i class="bi bi-currency-dollar"></i>$1K - $1.5K</small
+            >
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <small class="text-muted">Hace 2 días</small>
+              <button class="btn text-light" style="background-color: blue">
+                Ver Más
+              </button>
             </div>
-
-            <div class="col-md-4">
-                <div class="card border rounded-3 p-3 h-100">
-                    <div class="d-flex gap-3 mb-2">
-                        <div class="bg-primary bg-opacity-10 rounded-2 d-flex align-items-center justify-content-center text-primary"
-                            style="width:42px;height:42px;">
-                            <i class="bi bi-layers fs-5"></i>
-                        </div>
-                        <div>
-                            <p class="fw-bold mb-0 small">Desarrollador Full Stack Senior</p>
-                            <small class="text-muted">FullTech Solutions</small>
-                        </div>
-                    </div>
-                    <small class="text-muted d-block"><i class="bi bi-geo-alt me-1"></i>San Salvador, El
-                        Salvador</small>
-                    <small class="text-muted d-block"><i class="bi bi-briefcase me-1"></i>Tiempo Completo</small>
-                    <small class="text-primary fw-bold d-block mt-1"><i class="bi bi-currency-dollar"></i>$1K -
-                        $1.5K</small>
-                    <div class="d-flex justify-content-between align-items-center mt-3">
-                        <small class="text-muted">Hace 2 días</small>
-                        <button class="btn text-light" style="background-color: blue;">Ver Más</button>
-                    </div>
-                </div>
-            </div>
-
+          </div>
         </div>
+
+        <div class="col-md-4">
+          <div class="card border rounded-3 p-3 h-100">
+            <div class="d-flex gap-3 mb-2">
+              <div
+                class="bg-primary bg-opacity-10 rounded-2 d-flex align-items-center justify-content-center text-primary"
+                style="width: 42px; height: 42px"
+              >
+                <i class="bi bi-layers fs-5"></i>
+              </div>
+              <div>
+                <p class="fw-bold mb-0 small">
+                  Desarrollador Full Stack Senior
+                </p>
+                <small class="text-muted">FullTech Solutions</small>
+              </div>
+            </div>
+            <small class="text-muted d-block"
+              ><i class="bi bi-geo-alt me-1"></i>San Salvador, El
+              Salvador</small
+            >
+            <small class="text-muted d-block"
+              ><i class="bi bi-briefcase me-1"></i>Tiempo Completo</small
+            >
+            <small class="text-primary fw-bold d-block mt-1"
+              ><i class="bi bi-currency-dollar"></i>$1K - $1.5K</small
+            >
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <small class="text-muted">Hace 2 días</small>
+              <button class="btn text-light" style="background-color: blue">
+                Ver Más
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- FOOTER -->
     <section>
-        <footer
-            class="text-light px-4 px-lg-5 py-4"
-            style="background-color: blue"
-        >
-            <div class="row g-4">
-                <div class="col-12 col-md-4">
-                    <p class="fs-4 fw-bold mb-2">
-                    <i class="bi bi-briefcase"></i> Empleos
-                    </p>
-                    <p class="fs-6">
-                    Conectamos talento con las mejores oportunidades profesionales. Tu
-                    próximo empleo está aquí.
-                    </p>
-                </div>
-                <div class="col-12 col-md-4">
-                    <p class="fs-5 fw-bold mb-2">Enlaces Rápidos</p>
-                    <ul class="list-unstyled mb-0">
-                    <li class="mb-1">
-                        <a href="#" class="text-light text-decoration-none">Inicio</a>
-                    </li>
-                    <li class="mb-1">
-                        <a href="#" class="text-light text-decoration-none"
-                        >Buscar Trabajo</a
-                        >
-                    </li>
-                    <li class="mb-1">
-                        <a href="#" class="text-light text-decoration-none">Recursos</a>
-                    </li>
-                    <li class="mb-1">
-                        <a href="#" class="text-light text-decoration-none">Foros</a>
-                    </li>
-                    </ul>
-                </div>
-                <div class="col-12 col-md-4">
-                    <p class="fs-5 fw-bold mb-2">Contacto</p>
-                    <ul class="list-unstyled mb-0">
-                    <li class="mb-1">
-                        <i class="bi bi-geo-alt-fill me-1"></i> San Salvador (Remoto)
-                    </li>
-                    <li class="mb-1">
-                        <i class="bi bi-telephone-fill me-1"></i> 1234 5678
-                    </li>
-                    <li class="mb-1">
-                        <i class="bi bi-envelope-fill me-1"></i> correo@ejemplo.com
-                    </li>
-                    </ul>
-                </div>
-            </div>
-        </footer>
+      <footer
+        class="text-light px-4 px-lg-5 py-4"
+        style="background-color: blue"
+      >
+        <div class="row g-4">
+          <div class="col-12 col-md-4">
+            <p class="fs-4 fw-bold mb-2">
+              <i class="bi bi-briefcase"></i> Empleos
+            </p>
+            <p class="fs-6">
+              Conectamos talento con las mejores oportunidades profesionales. Tu
+              próximo empleo está aquí.
+            </p>
+          </div>
+          <div class="col-12 col-md-4">
+            <p class="fs-5 fw-bold mb-2">Enlaces Rápidos</p>
+            <ul class="list-unstyled mb-0">
+              <li class="mb-1">
+                <a href="#" class="text-light text-decoration-none">Inicio</a>
+              </li>
+              <li class="mb-1">
+                <a href="#" class="text-light text-decoration-none"
+                  >Buscar Trabajo</a
+                >
+              </li>
+              <li class="mb-1">
+                <a href="#" class="text-light text-decoration-none">Recursos</a>
+              </li>
+              <li class="mb-1">
+                <a href="#" class="text-light text-decoration-none">Foros</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-12 col-md-4">
+            <p class="fs-5 fw-bold mb-2">Contacto</p>
+            <ul class="list-unstyled mb-0">
+              <li class="mb-1">
+                <i class="bi bi-geo-alt-fill me-1"></i> San Salvador (Remoto)
+              </li>
+              <li class="mb-1">
+                <i class="bi bi-telephone-fill me-1"></i> 1234 5678
+              </li>
+              <li class="mb-1">
+                <i class="bi bi-envelope-fill me-1"></i> correo@ejemplo.com
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-
+  </body>
 </html>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Empleos - Login</title>
+    <title>Regístrate</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -16,64 +16,319 @@
     />
   </head>
   <body class="bg-light min-vh-100 d-flex flex-column justify-content-center">
-    <div class="container py-4 py-md-5">
-
-        <!-- Título -->
-        <div class="text-center mb-4 px-2">
-          <h2 class="fw-bold">Crea tu cuenta</h2>
-          <p class="text-muted">Únete a EmpleosPro y comienza tu búsqueda de empleo</p>
+    <section>
+      <nav class="navbar navbar-expand-lg bg-body-secondary px-3 px-lg-5 py-3">
+        <a
+          class="navbar-brand fw-bold fs-4"
+          href="./home.html"
+          style="color: blue"
+        >
+          <i class="bi bi-briefcase"></i> Empleos
+        </a>
+        <button
+          class="navbar-toggler ms-auto"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div
+            class="mx-auto my-2 my-lg-0"
+            style="max-width: 420px; width: 100%"
+          >
+            <input
+              type="text"
+              class="form-control rounded-2"
+              placeholder="Buscar empleos, empresas..."
+            />
+          </div>
+          <div
+            class="d-flex flex-column flex-lg-row gap-2 mt-2 mt-lg-0 ms-lg-3"
+            id="divLogin"
+          >
+            <a href="./login.html">
+              <button class="btn btn-light fw-bold w-100" style="color: blue">
+                Iniciar Sesión
+              </button>
+            </a>
+            <a href="./register.html">
+              <button
+                class="btn fw-bold text-light w-100"
+                style="background-color: blue"
+              >
+                Registrarse
+              </button>
+            </a>
+          </div>
+          <div
+            class="d-flex flex-column flex-lg-row gap-2 mt-2 mt-lg-0 ms-lg-3 d-none align-items-center"
+            id="divProfileBadge"
+          >
+            <a
+              href="./profile.html"
+              class="text-decoration-none"
+              id="profileBadge"
+            >
+              <i class="bi bi-person-fill"></i>
+            </a>
+          </div>
+          <ul class="navbar-nav d-lg-none mt-3 border-top pt-3">
+            <li class="nav-item">
+              <a href="#" class="nav-link text-dark"
+                ><i class="bi bi-search"></i> Buscar Empleo</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link text-dark"
+                ><i class="bi bi-stack"></i> Recursos</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link text-dark"
+                ><i class="bi bi-bookmark-star-fill"></i> Valoraciones</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link text-dark"
+                ><i class="bi bi-person-fill"></i> Mi Perfil</a
+              >
+            </li>
+          </ul>
         </div>
+      </nav>
+      <div class="d-none d-lg-flex gap-5 px-5 py-3 border-top">
+        <a href="#" class="text-dark text-decoration-none">
+          <i class="bi bi-search"></i> Buscar Empleo
+        </a>
+        <a href="#" class="text-dark text-decoration-none">
+          <i class="bi bi-stack"></i> Recursos
+        </a>
+        <a href="#" class="text-dark text-decoration-none">
+          <i class="bi bi-bookmark-star-fill"></i> Valoraciones
+        </a>
+        <a href="#" class="text-dark text-decoration-none">
+          <i class="bi bi-person-fill"></i> Mi Perfil
+        </a>
+      </div>
+    </section>
+    <div class="container py-4 py-md-5">
+      <!-- Título -->
+      <div class="text-center mb-4 px-2">
+        <h2 class="fw-bold">Crea tu cuenta</h2>
+        <p class="text-muted">
+          Únete a EmpleosPro y comienza tu búsqueda de empleo
+        </p>
+      </div>
 
-        <!-- Cards de rol -->
-        <div class="row justify-content-center g-3 mb-4 px-2">
-          <div class="col-6 col-sm-auto">
-            <div class="card border text-center p-3 h-100" style="cursor: pointer; min-width: 140px;">
+      <!-- Cards de rol -->
+      <div class="row justify-content-center g-3 mb-4 px-2">
+        <div class="col-6 col-sm-auto">
+          <input
+            type="radio"
+            class="btn-check"
+            name="tipo-usuario"
+            id="busco-empleo"
+            autocomplete="off"
+            value="candidate"
+            checked
+          />
+          <label
+            for="busco-empleo"
+            class="d-block"
+            style="cursor: pointer; min-width: 140px"
+          >
+            <div class="card border text-center p-3 h-100 tipo-card">
               <i class="bi bi-person-fill fs-2 text-primary mb-2"></i>
               <span class="fw-semibold">Busco Empleo</span>
             </div>
-          </div>
-          <div class="col-6 col-sm-auto">
-            <div class="card border text-center p-3 h-100" style="cursor: pointer; min-width: 140px;">
-              <i class="bi bi-building fs-2 text-secondary mb-2"></i>
+          </label>
+        </div>
+        <div class="col-6 col-sm-auto">
+          <input
+            type="radio"
+            class="btn-check"
+            name="tipo-usuario"
+            id="soy-empresa"
+            value="company"
+            autocomplete="off"
+          />
+          <label
+            for="soy-empresa"
+            class="d-block"
+            style="cursor: pointer; min-width: 140px"
+          >
+            <div class="card border text-center p-3 h-100 tipo-card">
+              <i class="bi bi-building fs-2 text-primary mb-2"></i>
               <span class="fw-semibold">Soy empresa</span>
             </div>
-          </div>
+          </label>
         </div>
+      </div>
+      <style>
+        .btn-check:checked + label .tipo-card {
+          border-color: #0d6efd !important;
+          box-shadow: 0 0 0 2px #0d6efd;
+        }
+      </style>
 
-        <!-- Formulario -->
-        <div class="row justify-content-center px-2">
-          <div class="col-12 col-sm-10 col-md-8 col-lg-7">
-            <div class="card border p-3 p-md-4">
-              <div class="row g-3">
-                <div class="col-12 col-md-6">
-                  <label class="form-label fw-semibold">Nombre Completo</label>
-                  <input type="text" class="form-control" placeholder="Ejemplo" />
-                </div>
-                <div class="col-12 col-md-6">
-                  <label class="form-label fw-semibold">Correo electrónico</label>
-                  <input type="email" class="form-control" placeholder="tu@email.com" />
-                </div>
-                <div class="col-12 col-md-6">
-                  <label class="form-label fw-semibold">Contraseña</label>
-                  <input type="password" class="form-control" placeholder="Mínimo 8 caracteres" />
-                </div>
-                <div class="col-12 col-md-6">
-                  <label class="form-label fw-semibold">Confirmar contraseña</label>
-                  <input type="password" class="form-control" placeholder="Repite tu contraseña" />
-                </div>
-                <div class="col-12 mt-2">
-                  <button class="btn btn-primary w-100 py-2">Crear cuenta</button>
+      <!-- Formularios-->
+      <div class="row justify-content-center px-2">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-7">
+          <!--Formulario para Candidato-->
+          <div id="divCandidate">
+            <form id="formRegisterCandidate">
+              <div class="card border p-3 p-md-4">
+                <div class="row g-3">
+                  <div class="col-12 col-md-6">
+                    <label class="form-label fw-semibold"
+                      >Nombre Completo</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Ejemplo"
+                      id="nombreCompleto"
+                      required
+                    />
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <label class="form-label fw-semibold"
+                      >Correo electrónico</label
+                    >
+                    <input
+                      type="email"
+                      class="form-control"
+                      placeholder="tu@email.com"
+                      id="correoElectronico"
+                      required
+                    />
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <label class="form-label fw-semibold">Contraseña</label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      placeholder="Mínimo 8 caracteres"
+                      id="contraseniaPrevia"
+                      required
+                    />
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <label class="form-label fw-semibold"
+                      >Confirmar contraseña</label
+                    >
+                    <input
+                      type="password"
+                      class="form-control"
+                      placeholder="Repite tu contraseña"
+                      id="contraseniaConfirmada"
+                      required
+                    />
+                  </div>
+                  <div class="col-12 mt-4">
+                    <button
+                      class="btn btn-primary w-100 py-2"
+                      id="btnCrearCuenta"
+                      type="submit"
+                    >
+                      Crear cuenta
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
+            </form>
+          </div>
+          <!--Formulario para Empresa-->
+          <div id="divCompany" class="d-none">
+            <form id="formRegisterCompany">
+              <div class="card border p-3 p-md-4">
+                <div class="row g-3">
+                  <div class="col-12 col-md-6">
+                    <label class="form-label fw-semibold"
+                      >Nombre de Contacto</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Ejemplo"
+                      id="nombreContacto"
+                      required
+                    />
+                  </div>
 
-            <div class="text-center mt-3">
-              <span class="text-muted small">¿Ya tienes cuenta? </span>
-              <a href="#" class="text-primary small text-decoration-none fw-semibold">Inicia sesion</a>
-            </div>
+                  <div class="col-12 col-md-6">
+                    <label class="form-label fw-semibold"
+                      >Correo electrónico del Contacto</label
+                    >
+                    <input
+                      type="email"
+                      class="form-control"
+                      placeholder="tu@email.com"
+                      id="correoElectronicoContacto"
+                      required
+                    />
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label fw-semibold"
+                      >Nombre de la Empresa</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Ejemplo SV"
+                      id="nombreEmpresa"
+                      required
+                    />
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <label class="form-label fw-semibold">Contraseña</label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      placeholder="Mínimo 8 caracteres"
+                      id="contraseniaPreviaEmpresa"
+                      required
+                    />
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <label class="form-label fw-semibold"
+                      >Confirmar contraseña</label
+                    >
+                    <input
+                      type="password"
+                      class="form-control"
+                      placeholder="Repite tu contraseña"
+                      id="contraseniaConfirmadaEmpresa"
+                      required
+                    />
+                  </div>
+                  <div class="col-12 mt-4">
+                    <button
+                      class="btn btn-primary w-100 py-2"
+                      id="btnCrearCuentaEmpresa"
+                      type="submit"
+                    >
+                      Crear cuenta
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="text-center mt-3">
+            <span class="text-muted small">¿Ya tienes cuenta? </span>
+            <a
+              href="./login.html"
+              class="text-primary small text-decoration-none fw-semibold"
+              >Inicia sesion</a
+            >
           </div>
         </div>
-
       </div>
     </div>
 
@@ -82,5 +337,6 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
+    <script src="/js/register.js"></script>
   </body>
 </html>
