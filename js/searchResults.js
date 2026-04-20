@@ -1,5 +1,3 @@
-const API_URL = "http://localhost:3000";
-
 let allJobs = [];
 let filteredJobs = [];
 let currentPage = 1;
