@@ -18,7 +18,7 @@
     <!-- NAVBAR -->
     <section>
       <nav class="navbar navbar-expand-lg bg-body-secondary px-3 px-lg-5 py-3">
-        <a class="navbar-brand fw-bold fs-4" href="./home.html" style="color: blue">
+        <a class="navbar-brand fw-bold fs-4" href="#" style="color: blue">
           <i class="bi bi-briefcase"></i> Empleos
         </a>
         <button
@@ -45,28 +45,19 @@
           </div>
           <div
             class="d-flex flex-column flex-lg-row gap-2 mt-2 mt-lg-0 ms-lg-3"
-            id="divLogin"
           >
-            <a href="./login.html">
+            <a href="#">
               <button class="btn btn-light fw-bold w-100" style="color: blue">
                 Iniciar Sesión
               </button>
             </a>
-            <a href="./register.html">
+            <a href="#">
               <button
                 class="btn fw-bold text-light w-100"
                 style="background-color: blue"
               >
                 Registrarse
               </button>
-            </a>
-          </div>
-          <div
-            class="d-flex flex-column flex-lg-row gap-2 mt-2 mt-lg-0 ms-lg-3 d-none"
-            id="divProfileBadge"
-          >
-            <a href="./profile.html" class="text-decoration-none" id="profileBadge">
-              <i class="bi bi-person-fill"></i>
             </a>
           </div>
           <ul class="navbar-nav d-lg-none mt-3 border-top pt-3">
@@ -94,18 +85,18 @@
         </div>
       </nav>
       <div class="d-none d-lg-flex gap-5 px-5 py-3 border-top">
-        <a href="#" class="text-dark text-decoration-none">
-          <i class="bi bi-search"></i> Buscar Empleo
-        </a>
-        <a href="#" class="text-dark text-decoration-none">
-          <i class="bi bi-stack"></i> Recursos
-        </a>
-        <a href="#" class="text-dark text-decoration-none">
-          <i class="bi bi-bookmark-star-fill"></i> Valoraciones
-        </a>
-        <a href="#" class="text-dark text-decoration-none">
-          <i class="bi bi-person-fill"></i> Mi Perfil
-        </a>
+        <a href="#" class="text-dark text-decoration-none"
+          ><i class="bi bi-search"></i> Buscar Empleo</a
+        >
+        <a href="#" class="text-dark text-decoration-none"
+          ><i class="bi bi-stack"></i> Recursos</a
+        >
+        <a href="#" class="text-dark text-decoration-none"
+          ><i class="bi bi-bookmark-star-fill"></i> Valoraciones</a
+        >
+        <a href="#" class="text-dark text-decoration-none"
+          ><i class="bi bi-person-fill"></i> Mi Perfil</a
+        >
       </div>
       <script src="/js/config.js"></script>
       <script src="/js/navbar.js"></script>
@@ -155,6 +146,7 @@
       </ul>
 
       <div class="tab-content" id="panelTabsContent">
+        <!-- PERFIL -->
         <div class="tab-pane fade show active" id="perfil" role="tabpanel">
           <div class="card border-0 shadow-sm">
             <div class="card-body p-4">
@@ -162,6 +154,7 @@
 
               <div class="d-flex align-items-center gap-3 mb-4">
                 <div
+                  id="avatar-initials"
                   class="bg-primary rounded d-flex align-items-center justify-content-center text-white fw-bold fs-5"
                   style="width: 60px; height: 60px; flex-shrink: 0"
                 >
@@ -173,142 +166,126 @@
               </div>
 
               <div class="row g-3">
-                <!-- Nombre -->
                 <div class="col-md-6">
                   <label class="form-label small fw-semibold"
                     >Nombre de la empresa</label
                   >
                   <input
                     type="text"
+                    id="input-nombre"
                     class="form-control form-control-sm"
-                    value="FullTech Solutions"
+                    placeholder="Nombre de la empresa"
                   />
                 </div>
-                <!-- Sector -->
                 <div class="col-md-6">
                   <label class="form-label small fw-semibold">Sector</label>
-                  <select class="form-select form-select-sm">
-                    <option>Seleccionar un Sector</option>
-                    <option selected>Tecnología de la Información</option>
+                  <select id="input-sector" class="form-select form-select-sm">
+                    <option value="">Seleccionar un Sector</option>
+                    <option>Tecnología de la Información</option>
                     <option>Finanzas</option>
                     <option>Salud</option>
                     <option>Educación</option>
+                    <option>Manufactura</option>
+                    <option>Comercio</option>
+                    <option>Servicios</option>
                   </select>
                 </div>
-                <!-- Tamaño -->
                 <div class="col-md-6">
                   <label class="form-label small fw-semibold"
                     >Tamaño de la empresa</label
                   >
-                  <select class="form-select form-select-sm">
-                    <option>Seleccionar Tamaño</option>
+                  <select id="input-tamano" class="form-select form-select-sm">
+                    <option value="">Seleccionar Tamaño</option>
                     <option>1 - 10</option>
                     <option>11 - 50</option>
                     <option>51 - 200</option>
-                    <option selected>201 - 500</option>
+                    <option>201 - 500</option>
                     <option>500+</option>
                   </select>
                 </div>
-                <!-- Ubicación -->
                 <div class="col-md-6">
                   <label class="form-label small fw-semibold">Ubicación</label>
                   <input
                     type="text"
+                    id="input-ubicacion"
                     class="form-control form-control-sm"
-                    value="San Salvador, El Salvador"
+                    placeholder="San Salvador, El Salvador"
                   />
                 </div>
-                <!-- Sitio Web -->
                 <div class="col-md-6">
                   <label class="form-label small fw-semibold">Sitio Web</label>
                   <input
                     type="url"
+                    id="input-website"
                     class="form-control form-control-sm"
                     placeholder="https://www.ejemplo.com"
                   />
                 </div>
-                <!-- Email -->
                 <div class="col-md-6">
                   <label class="form-label small fw-semibold"
                     >Email de Contacto</label
                   >
                   <input
                     type="email"
+                    id="input-email"
                     class="form-control form-control-sm"
                     placeholder="contacto@gmail.com"
                   />
                 </div>
-                <!-- LinkedIn -->
                 <div class="col-md-6">
                   <label class="form-label small fw-semibold">LinkedIn</label>
                   <input
                     type="url"
+                    id="input-linkedin"
                     class="form-control form-control-sm"
                     placeholder="https://www.linkedin.com"
                   />
                 </div>
-                <!-- Teléfono -->
                 <div class="col-md-6">
                   <label class="form-label small fw-semibold">Teléfono</label>
                   <input
                     type="text"
+                    id="input-telefono"
                     class="form-control form-control-sm"
                     placeholder="1234 5678"
                   />
                 </div>
-                <!-- Descripción -->
                 <div class="col-12">
                   <label class="form-label small fw-semibold"
                     >Descripción de la empresa</label
                   >
                   <textarea
+                    id="input-descripcion"
                     class="form-control form-control-sm"
                     rows="3"
                     placeholder="Describe tu empresa, valores, beneficios..."
                   ></textarea>
                 </div>
-                <!-- Misión -->
                 <div class="col-12">
                   <label class="form-label small fw-semibold"
                     >Misión de la empresa</label
                   >
                   <textarea
+                    id="input-mision"
                     class="form-control form-control-sm"
                     rows="2"
                     placeholder="Misión..."
                   ></textarea>
                 </div>
-                <!-- Visión -->
                 <div class="col-12">
                   <label class="form-label small fw-semibold"
                     >Visión de la empresa</label
                   >
                   <textarea
+                    id="input-vision"
                     class="form-control form-control-sm"
                     rows="2"
                     placeholder="Visión..."
                   ></textarea>
                 </div>
-                <!-- Beneficios & Valores -->
-                <div class="col-md-6">
-                  <label class="form-label small fw-semibold">Beneficios</label>
-                  <textarea
-                    class="form-control form-control-sm"
-                    rows="3"
-                    placeholder="Seguro médico..."
-                  ></textarea>
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label small fw-semibold">Valores</label>
-                  <textarea
-                    class="form-control form-control-sm"
-                    rows="3"
-                    placeholder="Innovación constante..."
-                  ></textarea>
-                </div>
-                <!-- Guardar -->
                 <div class="col-12">
                   <button
+                    id="btn-guardar-perfil"
                     class="btn btn-sm fw-bold text-light"
                     style="background-color: blue"
                   >
@@ -326,24 +303,23 @@
             <div class="card-body p-4">
               <h6 class="fw-bold mb-4">Publicar Vacante</h6>
               <div class="row g-3">
-                <!-- Título -->
                 <div class="col-md-6">
                   <label class="form-label small fw-semibold"
                     >Título del Puesto</label
                   >
                   <input
                     type="text"
+                    id="vac-titulo"
                     class="form-control form-control-sm"
                     placeholder="Ej. Desarrollador Full Stack"
                   />
                 </div>
-                <!-- Tipo de Trabajo -->
                 <div class="col-md-6">
                   <label class="form-label small fw-semibold"
                     >Tipo de Trabajo</label
                   >
-                  <select class="form-select form-select-sm">
-                    <option>Seleccionar Tipo</option>
+                  <select id="vac-contrato" class="form-select form-select-sm">
+                    <option value="">Seleccionar Tipo</option>
                     <option>Tiempo Completo</option>
                     <option>Medio Tiempo</option>
                     <option>Contrato</option>
@@ -351,82 +327,86 @@
                     <option>Pasantía</option>
                   </select>
                 </div>
-                <!-- Ubicación -->
                 <div class="col-md-6">
                   <label class="form-label small fw-semibold">Ubicación</label>
                   <input
                     type="text"
+                    id="vac-ubicacion"
                     class="form-control form-control-sm"
                     placeholder="San Salvador, El Salvador"
                   />
                 </div>
-                <!-- Nivel Experiencia -->
                 <div class="col-md-6">
                   <label class="form-label small fw-semibold"
                     >Nivel Experiencia</label
                   >
-                  <select class="form-select form-select-sm">
-                    <option>Seleccionar Nivel</option>
+                  <select
+                    id="vac-experiencia"
+                    class="form-select form-select-sm"
+                  >
+                    <option value="">Seleccionar Nivel</option>
                     <option>Junior (0-2 años)</option>
                     <option>Semi-Senior (2-5 años)</option>
                     <option>Senior (5+ años)</option>
                     <option>Lead / Manager</option>
                   </select>
                 </div>
-                <!-- Salario Mínimo -->
                 <div class="col-md-6">
                   <label class="form-label small fw-semibold"
                     >Salario Mínimo</label
                   >
                   <input
                     type="number"
+                    id="vac-salario-min"
                     class="form-control form-control-sm"
                     placeholder="1000"
                   />
                 </div>
-                <!-- Salario Máximo -->
                 <div class="col-md-6">
                   <label class="form-label small fw-semibold"
                     >Salario Máximo</label
                   >
                   <input
                     type="number"
+                    id="vac-salario-max"
                     class="form-control form-control-sm"
                     placeholder="5000"
                   />
                 </div>
-                <!-- Descripción del Puesto -->
                 <div class="col-12">
                   <label class="form-label small fw-semibold"
                     >Descripción del Puesto</label
                   >
                   <textarea
+                    id="vac-descripcion"
                     class="form-control form-control-sm"
                     rows="4"
                     placeholder="Describe el puesto, responsabilidades..."
                   ></textarea>
                 </div>
-                <!-- Requisitos -->
                 <div class="col-12">
                   <label class="form-label small fw-semibold">Requisitos</label>
                   <textarea
+                    id="vac-requisitos"
                     class="form-control form-control-sm"
                     rows="3"
                     placeholder="Lista los requisitos para el puesto..."
                   ></textarea>
                 </div>
-                <!-- Beneficios del puesto -->
                 <div class="col-12">
-                  <label class="form-label small fw-semibold">Requisitos</label>
+                  <label class="form-label small fw-semibold"
+                    >Beneficios del puesto</label
+                  >
                   <textarea
+                    id="vac-beneficios"
                     class="form-control form-control-sm"
                     rows="3"
                     placeholder="Describe los beneficios del puesto..."
                   ></textarea>
                 </div>
-                <!-- Publicar -->
                 <div class="col-12">
                   <button
+                    id="btn-publicar"
                     class="btn btn-sm fw-bold text-light"
                     style="background-color: blue"
                   >
@@ -443,187 +423,9 @@
           <div class="card border-0 shadow-sm">
             <div class="card-body p-4">
               <h6 class="fw-bold mb-4">Gestionar Postulaciones</h6>
-
-              <!-- Postulación 1 -->
-              <div class="card border-0 bg-light mb-3">
-                <div class="card-body py-3 px-3">
-                  <div class="d-flex align-items-start gap-3">
-                    <div
-                      class="bg-primary rounded-circle d-flex align-items-center justify-content-center text-white fw-bold flex-shrink-0"
-                      style="width: 45px; height: 45px"
-                    >
-                      DA
-                    </div>
-                    <div class="flex-grow-1">
-                      <div
-                        class="d-flex justify-content-between align-items-start flex-wrap gap-2"
-                      >
-                        <div>
-                          <p class="fw-bold small mb-0">Daniel López</p>
-                          <p class="text-muted small mb-2">
-                            Desarrollador Full Stack Senior
-                          </p>
-                          <div class="row g-2 small text-muted">
-                            <div class="col-auto">
-                              <span class="fw-semibold text-dark"
-                                >Fecha de Postulación</span
-                              ><br />
-                              15/03/2026
-                            </div>
-                            <div class="col-auto">
-                              <span class="fw-semibold text-dark"
-                                >Experiencia</span
-                              ><br />
-                              6 años
-                            </div>
-                            <div class="col-auto">
-                              <span class="fw-semibold text-dark"
-                                >Habilidades</span
-                              ><br />
-                              React, Node, TypeScript
-                            </div>
-                          </div>
-                        </div>
-                        <span class="badge text-bg-secondary">Pendiente</span>
-                      </div>
-                      <div class="d-flex gap-2 mt-2 flex-wrap">
-                        <button class="btn btn-outline-secondary btn-sm">
-                          Ver Perfil
-                        </button>
-                        <button
-                          class="btn btn-sm fw-bold text-light"
-                          style="background-color: blue"
-                        >
-                          Aceptar
-                        </button>
-                        <button class="btn btn-sm btn-outline-danger">
-                          Rechazar
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Postulación 2 -->
-              <div class="card border-0 bg-light mb-3">
-                <div class="card-body py-3 px-3">
-                  <div class="d-flex align-items-start gap-3">
-                    <div
-                      class="bg-primary rounded-circle d-flex align-items-center justify-content-center text-white fw-bold flex-shrink-0"
-                      style="width: 45px; height: 45px"
-                    >
-                      DA
-                    </div>
-                    <div class="flex-grow-1">
-                      <div
-                        class="d-flex justify-content-between align-items-start flex-wrap gap-2"
-                      >
-                        <div>
-                          <p class="fw-bold small mb-0">Daniel López</p>
-                          <p class="text-muted small mb-2">
-                            Desarrollador Full Stack Senior
-                          </p>
-                          <div class="row g-2 small text-muted">
-                            <div class="col-auto">
-                              <span class="fw-semibold text-dark"
-                                >Fecha de Postulación</span
-                              ><br />
-                              10/03/2026
-                            </div>
-                            <div class="col-auto">
-                              <span class="fw-semibold text-dark"
-                                >Experiencia</span
-                              ><br />
-                              6 años
-                            </div>
-                            <div class="col-auto">
-                              <span class="fw-semibold text-dark"
-                                >Habilidades</span
-                              ><br />
-                              React, Node, TypeScript
-                            </div>
-                          </div>
-                        </div>
-                        <span class="badge text-bg-secondary">Pendiente</span>
-                      </div>
-                      <div class="d-flex gap-2 mt-2 flex-wrap">
-                        <button class="btn btn-outline-secondary btn-sm">
-                          Ver Perfil
-                        </button>
-                        <button
-                          class="btn btn-sm fw-bold text-light"
-                          style="background-color: blue"
-                        >
-                          Aceptar
-                        </button>
-                        <button class="btn btn-sm btn-outline-danger">
-                          Rechazar
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Postulación 3 -->
-              <div class="card border-0 bg-light mb-3">
-                <div class="card-body py-3 px-3">
-                  <div class="d-flex align-items-start gap-3">
-                    <div
-                      class="bg-primary rounded-circle d-flex align-items-center justify-content-center text-white fw-bold flex-shrink-0"
-                      style="width: 45px; height: 45px"
-                    >
-                      DA
-                    </div>
-                    <div class="flex-grow-1">
-                      <div
-                        class="d-flex justify-content-between align-items-start flex-wrap gap-2"
-                      >
-                        <div>
-                          <p class="fw-bold small mb-0">Daniel López</p>
-                          <p class="text-muted small mb-2">
-                            Desarrollador Full Stack Senior
-                          </p>
-                          <div class="row g-2 small text-muted">
-                            <div class="col-auto">
-                              <span class="fw-semibold text-dark"
-                                >Fecha de Postulación</span
-                              ><br />
-                              10/03/2026
-                            </div>
-                            <div class="col-auto">
-                              <span class="fw-semibold text-dark"
-                                >Experiencia</span
-                              ><br />
-                              6 años
-                            </div>
-                            <div class="col-auto">
-                              <span class="fw-semibold text-dark"
-                                >Habilidades</span
-                              ><br />
-                              React, Node, TypeScript
-                            </div>
-                          </div>
-                        </div>
-                        <span class="badge text-bg-secondary">Pendiente</span>
-                      </div>
-                      <div class="d-flex gap-2 mt-2 flex-wrap">
-                        <button class="btn btn-outline-secondary btn-sm">
-                          Ver Perfil
-                        </button>
-                        <button
-                          class="btn btn-sm fw-bold text-light"
-                          style="background-color: blue"
-                        >
-                          Aceptar
-                        </button>
-                        <button class="btn btn-sm btn-outline-danger">
-                          Rechazar
-                        </button>
-                      </div>
-                    </div>
-                  </div>
+              <div id="applications-list">
+                <div class="text-center py-4">
+                  <div class="spinner-border text-primary" role="status"></div>
                 </div>
               </div>
             </div>
@@ -686,5 +488,6 @@
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/companyEdit.js"></script>
   </body>
 </html>
