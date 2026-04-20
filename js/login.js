@@ -44,6 +44,10 @@ const login = async () => {
       const result = await response.json();
       localStorage.setItem("token", result.token);
       localStorage.setItem("userId", result.userData.id_user);
+      localStorage.setItem("userRole", role);
+      if (role === ROLES.company && result.userData.id_company) {
+        localStorage.setItem("companyId", result.userData.id_company);
+      }
       alert("Inicio de sesión realizado con éxito");
       return true;
     } else {
