@@ -43,9 +43,73 @@ const vacancyStatusBadge = (status) => {
 };
 
 // -----------------------------------------ESTADISTICAS---------------------------------------
+
+const renderBarChart = (data) => {
+  const max = Math.max(...data.map((d) => d.value), 1);
+  const maxHeight = 120;
+
+  return data
+    .map((d) => {
+      const height = Math.max(Math.round((d.value / max) * maxHeight), 4);
+      return `
+      <div class="d-flex flex-column align-items-center gap-1">
+        <small class="text-muted" style="font-size:10px">${d.value}</small>
+        <div class="rounded-top" style="width:30px;height:${height}px;background-color:blue"></div>
+        <small class="text-muted">${d.label}</small>
+      </div>`;
+    })
+    .join("");
+};
+
+const renderSectorBars = (vacancies) => {
+  const counts = {};
+  for (let v of vacancies) {
+    const cat = v.category ?? "Sin categoría";
+    counts[cat] = (counts[cat] ?? 0) + 1;
+  }
+  const sorted = Object.entries(counts)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 5);
+  const max = sorted[0]?.[1] ?? 1;
+
+  return sorted
+    .map(([sector, count]) => {
+      const pct = Math.round((count / max) * 100);
+      return `
+      <div class="mb-2">
+        <small class="text-muted">${sector}</small>
+        <div class="progress mt-1" style="height:6px">
+          <div class="progress-bar" style="width:${pct}%;background-color:blue"></div>
+        </div>
+      </div>`;
+    })
+    .join("");
+};
+
+const renderLocationBadges = (users) => {
+  const counts = {};
+  for (let u of users) {
+    const loc = u.location ?? "Sin ubicación";
+    counts[loc] = (counts[loc] ?? 0) + 1;
+  }
+  const sorted = Object.entries(counts)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 5);
+
+  return sorted
+    .map(
+      ([loc, count]) => `
+    <div class="d-flex justify-content-between mb-2">
+      <small class="text-muted">${loc}</small>
+      <span class="badge bg-dark">${count}</span>
+    </div>`,
+    )
+    .join("");
+};
+
 const loadMetrics = () => {
   fetch(`${API_URL}/admin/metrics`, { headers: authHeaders })
-    .then((reply) => reply.json())
+    .then((r) => r.json())
     .then((data) => {
       document.getElementById("total-usuarios").textContent =
         data.total_users?.toLocaleString() ?? "—";
@@ -61,6 +125,10 @@ const loadMetrics = () => {
         data.pending_reviews?.toLocaleString() ?? "—";
       document.getElementById("analitica-vacantes").textContent =
         data.active_vacancies?.toLocaleString() ?? "—";
+      document.getElementById("analitica-total-usuarios").textContent =
+        data.total_users?.toLocaleString() ?? "—";
+      document.getElementById("analitica-total-empresas").textContent =
+        data.total_companies?.toLocaleString() ?? "—";
     });
 };
 
@@ -109,6 +177,30 @@ const loadUsers = () => {
     .then((data) => {
       allUsers = data;
       renderUsers(data);
+
+      document.getElementById("ubicaciones-lista").innerHTML =
+        renderLocationBadges(data);
+
+      const days = ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"];
+      const counts = Array(7).fill(0);
+      const today = new Date();
+
+      for (let u of data) {
+        const d = new Date(u.created_at);
+        const diff = Math.floor((today - d) / (1000 * 60 * 60 * 24));
+        if (diff < 7) counts[d.getDay()]++;
+      }
+
+      const chartData = days.map((label, i) => ({ label, value: counts[i] }));
+      document.getElementById("grafico-barras").innerHTML =
+        renderBarChart(chartData);
+
+      const hoy = new Date().toLocaleDateString("es-SV");
+      const registrosHoy = data.filter(
+        (u) => new Date(u.created_at).toLocaleDateString("es-SV") === hoy,
+      ).length;
+      document.getElementById("analitica-registros-hoy").textContent =
+        registrosHoy;
     });
 };
 
@@ -259,6 +351,16 @@ const loadVacancies = () => {
     .then((data) => {
       allVacancies = data;
       renderVacancies(data);
+
+      document.getElementById("sectores-lista").innerHTML =
+        renderSectorBars(data);
+
+      const hoy = new Date().toLocaleDateString("es-SV");
+      const vacantesHoy = data.filter(
+        (v) => new Date(v.published_at).toLocaleDateString("es-SV") === hoy,
+      ).length;
+      document.getElementById("analitica-vacantes-hoy").textContent =
+        vacantesHoy;
     });
 };
 
