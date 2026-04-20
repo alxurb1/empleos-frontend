@@ -1,278 +1,184 @@
 <!doctype html>
 <html lang="es">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Foros y Valoraciones</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+  </head>
 
-<body class="bg-light">
-    <!-- NAVBAR -->
+  <body class="bg-light">
     <section>
-        <nav class="navbar navbar-expand-lg bg-body-secondary px-3 px-lg-5 py-3">
-            <a class="navbar-brand fw-bold fs-4" href="#" style="color: blue;">
-                <i class="bi bi-briefcase"></i> Empleos
+      <nav class="navbar navbar-expand-lg bg-body-secondary px-3 px-lg-5 py-3">
+        <a class="navbar-brand fw-bold fs-4" href="#" style="color: blue">
+          <i class="bi bi-briefcase"></i> Empleos
+        </a>
+        <button
+          class="navbar-toggler ms-auto"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div
+            class="mx-auto my-2 my-lg-0"
+            style="max-width: 420px; width: 100%"
+          >
+            <input
+              type="text"
+              class="form-control rounded-2"
+              placeholder="Buscar empleos, empresas..."
+            />
+          </div>
+          <div
+            class="d-flex flex-column flex-lg-row gap-2 mt-2 mt-lg-0 ms-lg-3"
+          >
+            <a href="#">
+              <button class="btn btn-light fw-bold w-100" style="color: blue">
+                Iniciar Sesión
+              </button>
             </a>
-            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="mx-auto my-2 my-lg-0" style="max-width: 420px; width: 100%;">
-                    <input type="text" class="form-control rounded-2" placeholder="Buscar empleos, empresas..." />
-                </div>
-                <div class="d-flex flex-column flex-lg-row gap-2 mt-2 mt-lg-0 ms-lg-3">
-                    <a href="#">
-                        <button class="btn btn-light fw-bold w-100" style="color: blue;">
-                            Iniciar Sesión
-                        </button>
-                    </a>
-                    <a href="#">
-                        <button class="btn fw-bold text-light w-100" style="background-color: blue;">
-                            Registrarse
-                        </button>
-                    </a>
-                </div>
-                <ul class="navbar-nav d-lg-none mt-3 border-top pt-3">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link text-dark"><i class="bi bi-search"></i> Buscar Empleo</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link text-dark"><i class="bi bi-stack"></i> Recursos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link text-dark"><i class="bi bi-bookmark-star-fill"></i> Valoraciones</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link text-dark"><i class="bi bi-person-fill"></i> Mi Perfil</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <div class="d-none d-lg-flex gap-5 px-5 py-3 border-top">
-            <a href="#" class="text-dark text-decoration-none">
-                <i class="bi bi-search"></i> Buscar Empleo
+            <a href="#">
+              <button
+                class="btn fw-bold text-light w-100"
+                style="background-color: blue"
+              >
+                Registrarse
+              </button>
             </a>
-            <a href="#" class="text-dark text-decoration-none">
-                <i class="bi bi-stack"></i> Recursos
-            </a>
-            <a href="#" class="text-dark text-decoration-none">
-                <i class="bi bi-bookmark-star-fill"></i> Valoraciones
-            </a>
-            <a href="#" class="text-dark text-decoration-none">
-                <i class="bi bi-person-fill"></i> Mi Perfil
-            </a>
+          </div>
         </div>
+      </nav>
     </section>
 
     <div class="container py-4">
-        <h4 class="fw-bold mb-1">Foros y Valoraciones</h4>
-        <p class="text-muted mb-4">Conversa con otros profesionales, comparte experiencias y aprende de la comunidad</p>
+      <h4 class="fw-bold mb-1">Foros y Valoraciones</h4>
+      <p class="text-muted mb-4">
+        Conversa con otros profesionales, comparte experiencias y aprende de la
+        comunidad
+      </p>
 
-        <div class="row g-3">
-            <!-- Columna izquierda: Categorías -->
-            <div class="col-md-3">
-                <div class="card border-0 shadow-sm">
-                    <div class="card-body">
-                        <h6 class="fw-bold mb-3">Categorías</h6>
-                        <div class="d-flex flex-column gap-2">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="small">En Empleo</span>
-                                <span class="badge bg-dark">24</span>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="small">Diseño</span>
-                                <span class="badge bg-dark">18</span>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="small">Marketing</span>
-                                <span class="badge bg-dark">15</span>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="small">Remoto</span>
-                                <span class="badge bg-dark">31</span>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="small">Emprendimiento</span>
-                                <span class="badge bg-dark">9</span>
-                            </div>
-                        </div>
-                    </div>
+      <div class="row g-3">
+        <div class="col-md-3">
+          <div class="card border-0 shadow-sm">
+            <div class="card-body">
+              <h6 class="fw-bold mb-3">Categorías</h6>
+              <div class="d-flex flex-column gap-2">
+                <div
+                  class="d-flex justify-content-between align-items-center"
+                  style="cursor: pointer"
+                  onclick="loadPosts('technology')"
+                >
+                  <span class="small">Tecnología</span>
                 </div>
+                <div
+                  class="d-flex justify-content-between align-items-center"
+                  style="cursor: pointer"
+                  onclick="loadPosts('design')"
+                >
+                  <span class="small">Diseño</span>
+                </div>
+                <div
+                  class="d-flex justify-content-between align-items-center"
+                  style="cursor: pointer"
+                  onclick="loadPosts('remote_work')"
+                >
+                  <span class="small">Remoto</span>
+                </div>
+              </div>
             </div>
-
-            <!-- Columna derecha: Discusiones y formulario -->
-            <div class="col-md-9">
-
-                <!-- Discusiones -->
-                <div class="card border-0 shadow-sm mb-3">
-                    <div class="card-body">
-                        <h6 class="fw-bold mb-3">Discusiones Recientes</h6>
-
-                        <!-- Discusión 1 -->
-                        <div class="card border-0 bg-light mb-2">
-                            <div class="card-body py-2 px-3">
-                                <div class="d-flex justify-content-between align-items-start">
-                                    <div class="d-flex align-items-center gap-3">
-                                        <div class="bg-secondary rounded-circle d-flex align-items-center justify-content-center text-white fw-bold"
-                                            style="width: 38px; height: 38px; min-width: 38px; font-size: 13px">
-                                            JP
-                                        </div>
-                                        <div>
-                                            <p class="fw-semibold small mb-0">¿Cuál es el mejor stack tecnológico para
-                                                2026?</p>
-                                            <p class="text-muted small mb-0">Valeria Arevalo</p>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex flex-column align-items-end gap-1 ms-2">
-                                        <span class="badge bg-dark">En Empleo</span>
-                                        <small class="text-muted">hace 2 horas</small>
-                                    </div>
-                                </div>
-                                <div class="d-flex gap-3 mt-2 ms-5">
-                                    <small class="text-muted"><i class="bi bi-chat-dots me-1"></i>12 respuestas</small>
-                                    <small class="text-muted"><i class="bi bi-eye me-1"></i>238 vistas</small>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Discusión 2 -->
-                        <div class="card border-0 bg-light mb-2">
-                            <div class="card-body py-2 px-3">
-                                <div class="d-flex justify-content-between align-items-start">
-                                    <div class="d-flex align-items-center gap-3">
-                                        <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center text-white fw-bold"
-                                            style="width: 38px; height: 38px; min-width: 38px; font-size: 13px">
-                                            MA
-                                        </div>
-                                        <div>
-                                            <p class="fw-semibold small mb-0">¿Cuál es el mejor stack tecnológico para
-                                                2026?</p>
-                                            <p class="text-muted small mb-0">Keyli Urbaez</p>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex flex-column align-items-end gap-1 ms-2">
-                                        <span class="badge bg-dark">Diseño</span>
-                                        <small class="text-muted">hace 5 horas</small>
-                                    </div>
-                                </div>
-                                <div class="d-flex gap-3 mt-2 ms-5">
-                                    <small class="text-muted"><i class="bi bi-chat-dots me-1"></i>7 respuestas</small>
-                                    <small class="text-muted"><i class="bi bi-eye me-1"></i>104 vistas</small>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Discusión 3 -->
-                        <div class="card border-0 bg-light mb-2">
-                            <div class="card-body py-2 px-3">
-                                <div class="d-flex justify-content-between align-items-start">
-                                    <div class="d-flex align-items-center gap-3">
-                                        <div class="bg-success rounded-circle d-flex align-items-center justify-content-center text-white fw-bold"
-                                            style="width: 38px; height: 38px; min-width: 38px; font-size: 13px">
-                                            CR
-                                        </div>
-                                        <div>
-                                            <p class="fw-semibold small mb-0">¿Cuál es el mejor stack tecnológico para
-                                                2026?</p>
-                                            <p class="text-muted small mb-0">Alejandra Sandoval</p>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex flex-column align-items-end gap-1 ms-2">
-                                        <span class="badge bg-dark">Remoto</span>
-                                        <small class="text-muted">hace 1 día</small>
-                                    </div>
-                                </div>
-                                <div class="d-flex gap-3 mt-2 ms-5">
-                                    <small class="text-muted"><i class="bi bi-chat-dots me-1"></i>20 respuestas</small>
-                                    <small class="text-muted"><i class="bi bi-eye me-1"></i>512 vistas</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Formulario nueva discusión -->
-                <div class="card border-0 shadow-sm">
-                    <div class="card-body">
-                        <h6 class="fw-bold mb-3">Nueva Discusión</h6>
-
-                        <div class="mb-3">
-                            <label class="form-label small text-muted">Título de la Discusión</label>
-                            <input type="text" class="form-control form-control-sm bg-light border-0"
-                                placeholder="Escribe el título de tu discusión..." />
-                        </div>
-
-                        <div class="mb-3">
-                            <label class="form-label small text-muted">Contenido de la Discusión</label>
-                            <textarea class="form-control form-control-sm bg-light border-0" rows="4"
-                                placeholder="Comparte tu experiencia o pregunta con la comunidad..."></textarea>
-                        </div>
-
-                        <div class="d-flex justify-content-end">
-                            <button class="btn text-light" style="background-color: blue">
-                                Publicar Discusión
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+          </div>
         </div>
+
+        <div class="col-md-9">
+          <div class="card border-0 shadow-sm mb-3">
+            <div class="card-body">
+              <h6 class="fw-bold mb-3">Discusiones Recientes</h6>
+              <div id="posts-lista"></div>
+            </div>
+          </div>
+
+          <div class="card border-0 shadow-sm">
+            <div class="card-body">
+              <h6 class="fw-bold mb-3">Nueva Discusión</h6>
+
+              <div class="mb-3">
+                <label class="form-label small text-muted">Categoría</label>
+                <select
+                  id="post-categoria"
+                  class="form-select form-select-sm bg-light border-0"
+                >
+                  <option value="technology">Tecnología</option>
+                  <option value="design">Diseño</option>
+                  <option value="marketing">Marketing</option>
+                  <option value="data">Datos</option>
+                  <option value="salaries">Salarios</option>
+                  <option value="remote_work">Trabajo Remoto</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label small text-muted"
+                  >Título de la Discusión</label
+                >
+                <input
+                  type="text"
+                  id="post-titulo"
+                  class="form-control form-control-sm bg-light border-0"
+                  placeholder="Escribe el título..."
+                />
+              </div>
+              <div class="mb-3">
+                <label class="form-label small text-muted">Contenido</label>
+                <textarea
+                  id="post-contenido"
+                  class="form-control form-control-sm bg-light border-0"
+                  rows="4"
+                  placeholder="Comparte tu experiencia..."
+                ></textarea>
+              </div>
+              <div class="d-flex justify-content-end">
+                <button
+                  class="btn text-light"
+                  style="background-color: blue"
+                  onclick="createPost()"
+                >
+                  Publicar Discusión
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- FOOTER -->
-    <section>
-        <footer class="text-light px-4 px-lg-5 py-4" style="background-color: blue">
-            <div class="row g-4">
-                <div class="col-12 col-md-4">
-                    <p class="fs-4 fw-bold mb-2">
-                        <i class="bi bi-briefcase"></i> Empleos
-                    </p>
-                    <p class="fs-6">
-                        Conectamos talento con las mejores oportunidades profesionales. Tu
-                        próximo empleo está aquí.
-                    </p>
-                </div>
-                <div class="col-12 col-md-4">
-                    <p class="fs-5 fw-bold mb-2">Enlaces Rápidos</p>
-                    <ul class="list-unstyled mb-0">
-                        <li class="mb-1">
-                            <a href="#" class="text-light text-decoration-none">Inicio</a>
-                        </li>
-                        <li class="mb-1">
-                            <a href="#" class="text-light text-decoration-none">Buscar Trabajo</a>
-                        </li>
-                        <li class="mb-1">
-                            <a href="#" class="text-light text-decoration-none">Recursos</a>
-                        </li>
-                        <li class="mb-1">
-                            <a href="#" class="text-light text-decoration-none">Foros</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-12 col-md-4">
-                    <p class="fs-5 fw-bold mb-2">Contacto</p>
-                    <ul class="list-unstyled mb-0">
-                        <li class="mb-1">
-                            <i class="bi bi-geo-alt-fill me-1"></i> San Salvador (Remoto)
-                        </li>
-                        <li class="mb-1">
-                            <i class="bi bi-telephone-fill me-1"></i> 1234 5678
-                        </li>
-                        <li class="mb-1">
-                            <i class="bi bi-envelope-fill me-1"></i> correo@ejemplo.com
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </footer>
-    </section>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+    <footer
+      class="text-light px-4 px-lg-5 py-4 mt-5"
+      style="background-color: blue"
+    >
+      <div class="row g-4">
+        <div class="col-12 col-md-4">
+          <p class="fs-4 fw-bold mb-2">
+            <i class="bi bi-briefcase"></i> Empleos
+          </p>
+          <p class="fs-6">Conectamos talento con las mejores oportunidades.</p>
+        </div>
+      </div>
+    </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/forum.js"></script>
+  </body>
 </html>
