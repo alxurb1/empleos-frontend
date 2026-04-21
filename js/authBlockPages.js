@@ -1,6 +1,6 @@
 const PAGE_ROLES = {
   "admin.html": ["admin"],
-  "profile.html": ["candidate", "company"],
+  "profile.html": ["candidate", "company", "admin"],
   "profileEdit.html": ["candidate"],
   "perfil_empresa.html": ["candidate", "company"],
   "companyEdit.html": ["company"],
