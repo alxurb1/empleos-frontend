@@ -93,7 +93,7 @@ const renderJobs = (jobs) => {
                 <div class="d-flex gap-3 flex-wrap">
                   ${job.location ? `<span class="small text-muted"><i class="bi bi-geo-alt me-1"></i>${job.location}</span>` : ""}
                   ${contract ? `<span class="small text-muted"><i class="bi bi-briefcase me-1"></i>${contract}</span>` : ""}
-                  ${salary ? `<span class="small text-success fw-semibold"><i class="bi bi-currency-dollar"></i>${salary}</span>` : ""}
+                  ${salary ? `<span class="small text-success fw-semibold">${salary}</span>` : ""}
                 </div>
               </div>
             </div>

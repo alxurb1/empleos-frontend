@@ -9,7 +9,7 @@ const myId = localStorage.getItem("userId");
 
 const currentRole = localStorage.getItem("userRole");
 
-if (currentRole === ROLES.admin) {
+if (currentRole === ROLES.admin || currentRole === ROLES.company) {
   document.getElementById("divDescripcionPerfil").classList.add("d-none");
   document
     .getElementById("divIzquierdaPerfil")

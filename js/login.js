@@ -70,7 +70,7 @@ btnLogin.addEventListener("click", async (event) => {
   const userRole = localStorage.getItem("userRole");
 
   if (userRole === ROLES.admin) {
-    if (result && ROLES.admin) window.location.href = "/pages/admin.html";
+    if (result) window.location.href = "/pages/admin.html";
   } else {
     if (result) window.location.href = "/pages/home.html";
   }
