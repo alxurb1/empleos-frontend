@@ -81,6 +81,56 @@ const loadProfile = () => {
     });
 };
 
+const uploadPhoto = () => {
+  const file = document.getElementById("input-avatar").files[0];
+  if (!file) return;
+
+  if (!file.type.startsWith("image/")) {
+    alert("Por favor selecciona una imagen válida.");
+    return;
+  }
+
+  if (file.size > 5 * 1024 * 1024) {
+    alert("La imagen no puede superar los 5MB.");
+    return;
+  }
+
+  const formData = new FormData();
+  formData.append("photo", file);
+
+  const btn = document.querySelector(
+    "button[onclick=\"document.getElementById('input-avatar').click()\"]",
+  );
+  if (btn) {
+    btn.disabled = true;
+    btn.innerHTML =
+      '<span class="spinner-border spinner-border-sm me-1"></span> Subiendo...';
+  }
+
+  fetch(`${API_URL}/me/${userId}/photo`, {
+    method: "POST",
+    body: formData,
+  })
+    .then((reply) => reply.json())
+    .then((data) => {
+      if (data.avatar_url) {
+        const avatar = document.getElementById("avatar");
+        avatar.innerHTML = `<img src="${data.avatar_url}" alt="Avatar" class="rounded-circle w-100 h-100" style="object-fit:cover;">`;
+      } else {
+        alert(data.message ?? "Foto actualizada correctamente.");
+        loadProfile();
+      }
+    })
+    .catch(() => alert("Error al subir la foto."))
+    .finally(() => {
+      if (btn) {
+        btn.disabled = false;
+        btn.innerHTML = '<i class="bi bi-upload me-1"></i> Cambiar Foto';
+      }
+      document.getElementById("input-avatar").value = "";
+    });
+};
+
 const saveProfile = () => {
   const profileData = {
     full_name: document.getElementById("input-nombre").value,
