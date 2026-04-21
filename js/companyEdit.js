@@ -69,6 +69,54 @@ const loadProfile = () => {
     });
 };
 
+const uploadLogo = () => {
+  const file = document.getElementById("input-logo").files[0];
+  if (!file) return;
+
+  if (!file.type.startsWith("image/")) {
+    alert("Por favor selecciona una imagen válida.");
+    return;
+  }
+
+  if (file.size > 5 * 1024 * 1024) {
+    alert("La imagen no puede superar los 5MB.");
+    return;
+  }
+
+  const formData = new FormData();
+  formData.append("logo", file);
+
+  const btn = document.getElementById("btn-cambiar-logo");
+  if (btn) {
+    btn.disabled = true;
+    btn.innerHTML =
+      '<span class="spinner-border spinner-border-sm me-1"></span> Subiendo...';
+  }
+
+  fetch(`${API_URL}/companies/${companyId}/logo`, {
+    method: "POST",
+    body: formData,
+  })
+    .then((reply) => reply.json())
+    .then((data) => {
+      if (data.logo_url) {
+        document.getElementById("avatar-initials").innerHTML =
+          `<img src="${data.logo_url}" class="rounded" style="width:60px;height:60px;object-fit:cover;">`;
+      } else {
+        alert(data.message ?? "Logo actualizado correctamente.");
+        loadProfile();
+      }
+    })
+    .catch(() => alert("Error al subir el logo."))
+    .finally(() => {
+      if (btn) {
+        btn.disabled = false;
+        btn.innerHTML = '<i class="bi bi-upload me-1"></i> Cambiar Logo';
+      }
+      document.getElementById("input-logo").value = "";
+    });
+};
+
 const saveProfile = () => {
   const body = {
     name: document.getElementById("input-nombre").value.trim(),
