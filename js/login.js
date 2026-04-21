@@ -29,6 +29,8 @@ const login = async () => {
       URL = `${API_URL}/auth/loginCandidate`;
     } else if (role === ROLES.company) {
       URL = `${API_URL}/auth/loginCompany`;
+    } else if (role === ROLES.admin) {
+      URL = `${API_URL}/auth/loginAdmin`;
     }
     const response = await fetch(URL, {
       method: "POST",
@@ -64,5 +66,12 @@ btnLogin.addEventListener("click", async (event) => {
   event.preventDefault();
 
   const result = await login();
-  if (result) window.location.href = "/pages/home.html";
+
+  const userRole = localStorage.getItem("userRole");
+
+  if (userRole === ROLES.admin) {
+    if (result && ROLES.admin) window.location.href = "/pages/admin.html";
+  } else {
+    if (result) window.location.href = "/pages/home.html";
+  }
 });
