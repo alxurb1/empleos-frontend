@@ -66,6 +66,23 @@ const renderResenas = (reviews) => {
   }
   lista.innerHTML = "";
   for (let r of reviews) {
+    let displayName = r.reviewer_name ?? r.users?.full_name ?? "Anónimo";
+    let displayPos = r.position ?? "";
+    let displayPeriod = r.period ?? "";
+    let displayComment = r.comment ?? "";
+
+    if (displayComment.startsWith("[")) {
+      const closeBracketIndex = displayComment.indexOf("]");
+      if (closeBracketIndex !== -1) {
+        const detailsStr = displayComment.substring(1, closeBracketIndex);
+        const details = detailsStr.split(" - ");
+        if (details.length > 0) displayName = details[0];
+        if (details.length > 1) displayPos = details[1];
+        if (details.length > 2) displayPeriod = details[2];
+        displayComment = displayComment.substring(closeBracketIndex + 1).trim();
+      }
+    }
+
     lista.insertAdjacentHTML(
       "beforeend",
       `
@@ -73,15 +90,15 @@ const renderResenas = (reviews) => {
         <div class="card-body py-2 px-3">
           <div class="d-flex align-items-start gap-3">
             <div class="bg-secondary rounded-circle d-flex align-items-center justify-content-center text-white fw-bold flex-shrink-0" style="width:40px;height:40px">
-              ${getInitials(r.reviewer_name)}
+              ${getInitials(displayName)}
             </div>
             <div class="flex-grow-1">
               <div class="d-flex justify-content-between align-items-center">
-                <p class="fw-bold small mb-0">${r.reviewer_name ?? "Anónimo"}</p>
+                <p class="fw-bold small mb-0">${displayName}</p>
                 <span class="text-warning small">${renderStars(r.rating ?? 0)}</span>
               </div>
-              <p class="text-muted small mb-1">${r.position ?? ""} ${r.period ? "· " + r.period : ""}</p>
-              <p class="text-muted small mb-0">${r.comment ?? ""}</p>
+              <p class="text-muted small mb-1">${displayPos} ${displayPeriod ? "· " + displayPeriod : ""}</p>
+              <p class="text-muted small mb-0">${displayComment}</p>
             </div>
           </div>
         </div>
@@ -213,53 +230,77 @@ const setupFormResena = (id) => {
     btnEnviar.disabled = true;
     btnEnviar.textContent = "Enviando...";
 
+    const name = document.getElementById("resena-nombre").value.trim();
+    const pos = document.getElementById("resena-cargo").value.trim();
+    const period = document.getElementById("resena-periodo").value.trim();
+    const rawComment = document
+      .getElementById("resena-comentario")
+      .value.trim();
+
+    let finalComment = rawComment;
+    const details = [name, pos, period].filter(Boolean).join(" - ");
+    if (details) {
+      finalComment = `[${details}] ${rawComment}`;
+    }
+
     const payload = {
-      reviewer_name: document.getElementById("resena-nombre").value.trim(),
-      position: document.getElementById("resena-cargo").value.trim(),
-      period: document.getElementById("resena-periodo").value.trim(),
       rating: parseInt(document.getElementById("resena-rating").value),
-      comment: document.getElementById("resena-comentario").value.trim(),
+      comment: finalComment,
+      user_id: localStorage.getItem("userId"),
     };
 
     try {
       const res = await fetch(`${API_URL}/reviews/company/${id}`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
         body: JSON.stringify(payload),
       });
 
-      if (!res.ok) throw new Error();
+      if (!res.ok) {
+        const error = await res.json();
+        alert(error.message || "Error al enviar la reseña");
+        return;
+      }
 
       const nueva = await res.json();
       document.getElementById("seccion-form-resena").classList.add("d-none");
-      btnMostrar.textContent = "✏️ Escribir una Reseña";
+      btnMostrar.textContent = "Escribir una Reseña";
       form.reset();
 
       const lista = document.getElementById("resenas-lista");
       if (lista.querySelector("p")) lista.innerHTML = "";
+
+      let displayName = name || "Anónimo";
+      let displayPos = pos || "";
+      let displayPeriod = period || "";
+      let displayComment = rawComment || "";
+
       lista.insertAdjacentHTML(
         "afterbegin",
         `
-        <div class="card border-0 bg-light mb-2">
-          <div class="card-body py-2 px-3">
-            <div class="d-flex align-items-start gap-3">
-              <div class="bg-secondary rounded-circle d-flex align-items-center justify-content-center text-white fw-bold flex-shrink-0" style="width:40px;height:40px">
-                ${getInitials(nueva.reviewer_name)}
-              </div>
-              <div class="flex-grow-1">
-                <div class="d-flex justify-content-between align-items-center">
-                  <p class="fw-bold small mb-0">${nueva.reviewer_name ?? "Anónimo"}</p>
-                  <span class="text-warning small">${renderStars(nueva.rating ?? 0)}</span>
-                </div>
-                <p class="text-muted small mb-1">${nueva.position ?? ""} ${nueva.period ? "· " + nueva.period : ""}</p>
-                <p class="text-muted small mb-0">${nueva.comment ?? ""}</p>
-              </div>
-            </div>
+    <div class="card border-0 bg-light mb-2">
+      <div class="card-body py-2 px-3">
+        <div class="d-flex align-items-start gap-3">
+          <div class="bg-secondary rounded-circle d-flex align-items-center justify-content-center text-white fw-bold flex-shrink-0" style="width:40px;height:40px">
+            ${getInitials(displayName)}
           </div>
-        </div>`,
+          <div class="flex-grow-1">
+            <div class="d-flex justify-content-between align-items-center">
+              <p class="fw-bold small mb-0">${displayName}</p>
+              <span class="text-warning small">${renderStars(nueva.rating ?? 0)}</span>
+            </div>
+            <p class="text-muted small mb-1">${displayPos} ${displayPeriod ? "· " + displayPeriod : ""}</p>
+            <p class="text-muted small mb-0">${displayComment}</p>
+          </div>
+        </div>
+      </div>
+    </div>`,
       );
     } catch {
-      alert("Error al enviar la reseña. Intenta de nuevo.");
+      alert("Error al conectar con el servidor.");
     } finally {
       btnEnviar.disabled = false;
       btnEnviar.textContent = "Enviar Reseña";
