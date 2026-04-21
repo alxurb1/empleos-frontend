@@ -154,7 +154,7 @@ const postularse = (id_vacancy) => {
     return;
   }
 
-  fetch(`${API_URL}/vacancies/${id_vacancy}/apply`, {
+  fetch(`${API_URL}/vacancy/${id_vacancy}/apply`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ id_user: userId }),

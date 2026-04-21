@@ -1,3 +1,27 @@
+const ROLES = {
+  candidate: "candidate",
+  company: "company",
+  admin: "admin",
+};
+
+const urlId = new URLSearchParams(window.location.search).get("id");
+const myId = localStorage.getItem("userId");
+
+const currentRole = localStorage.getItem("userRole");
+
+if (currentRole === ROLES.admin) {
+  document.getElementById("divDescripcionPerfil").classList.add("d-none");
+  document
+    .getElementById("divIzquierdaPerfil")
+    .classList.add("col-md-6", "mx-auto");
+  document.getElementById("divIzquierdaPerfil").classList.remove("col-md-3");
+  document.getElementById("divCerrarSesion").classList.add("text-center");
+}
+
+if (urlId !== myId) {
+  document.getElementById("btnLogout").classList.add("d-none");
+}
+
 const getIdFromURL = () => {
   const params = new URLSearchParams(window.location.search);
   return params.get("id");
@@ -70,10 +94,13 @@ const renderPerfil = (perfil) => {
   document.getElementById("contenido").classList.remove("d-none");
 
   if (perfil.avatar_url) {
-    document.getElementById("avatar").innerHTML = `<img src="${perfil.avatar_url}" alt="Avatar" class="w-100 h-100 rounded-circle object-fit-cover" style="width: 120px; height: 120px;">`;
+    document.getElementById("avatar").innerHTML =
+      `<img src="${perfil.avatar_url}" alt="Avatar" class="w-100 h-100 rounded-circle object-fit-cover" style="width: 120px; height: 120px;">`;
   } else {
     document.getElementById("avatar").innerHTML = ""; // Limpiar imagen previa
-    document.getElementById("avatar").textContent = getInitials(perfil.full_name);
+    document.getElementById("avatar").textContent = getInitials(
+      perfil.full_name,
+    );
   }
 
   document.getElementById("nombre").textContent = perfil.full_name ?? "";
