@@ -77,9 +77,11 @@ const saveProfile = () => {
     location: document.getElementById("input-ubicacion").value.trim() || null,
     website: document.getElementById("input-website").value.trim() || null,
     email: document.getElementById("input-email").value.trim() || null,
-    linkedin_url: document.getElementById("input-linkedin").value.trim() || null,
+    linkedin_url:
+      document.getElementById("input-linkedin").value.trim() || null,
     phone: document.getElementById("input-telefono").value.trim() || null,
-    description: document.getElementById("input-descripcion").value.trim() || null,
+    description:
+      document.getElementById("input-descripcion").value.trim() || null,
     mission: document.getElementById("input-mision").value.trim() || null,
     vision: document.getElementById("input-vision").value.trim() || null,
   };
@@ -217,7 +219,7 @@ const loadApplications = () => {
                     ${statusBadge(app.status)}
                   </div>
                   <div class="d-flex gap-2 mt-2 flex-wrap">
-                    <a href="perfil-publico.html?id=${app.id_user}" class="btn btn-outline-secondary btn-sm">Ver Perfil</a>
+                    <a href="profile.html?id=${app.id_user}" class="btn btn-outline-secondary btn-sm">Ver Perfil</a>
                     <button class="btn btn-sm fw-bold text-light" style="background-color:blue"
                       onclick="updateStatus('${app.id_application}', 'interview')">Aceptar</button>
                     <button class="btn btn-sm btn-outline-danger"
