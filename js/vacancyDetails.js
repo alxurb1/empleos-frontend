@@ -1,7 +1,19 @@
+const ROLES = {
+  candidate: "candidate",
+  company: "company",
+  admin: "admin",
+};
+
 const getIdFromURL = () => {
   const params = new URLSearchParams(window.location.search);
   return params.get("id");
 };
+
+const currentRole = localStorage.getItem("userRole");
+
+if (currentRole === ROLES.company) {
+  document.getElementById("btn-postular").classList.add("d-none");
+}
 
 const formatK = (num) => `${Math.round(num / 1000)}K`;
 
