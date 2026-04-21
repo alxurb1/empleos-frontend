@@ -96,7 +96,7 @@
               >
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link text-dark"
+              <a href="#" class="nav-link text-dark nav-mi-perfil"
                 ><i class="bi bi-person-fill"></i> Mi Perfil</a
               >
             </li>
@@ -116,7 +116,7 @@
         >
           <i class="bi bi-bookmark-star-fill"></i> Valoraciones
         </a>
-        <a href="#" class="text-dark text-decoration-none">
+        <a href="#" class="text-dark text-decoration-none nav-mi-perfil">
           <i class="bi bi-person-fill"></i> Mi Perfil
         </a>
       </div>
@@ -132,25 +132,16 @@
       <div>
         <input
           type="text"
+          id="input-search-recursos"
           class="form-control rounded-2 bg-body-secondary w-100"
           style="max-width: 50%"
           placeholder="Buscar recursos, tutoriales, videos..."
         />
         <div class="d-flex flex-wrap py-3 gap-2">
-          <a href="#"
-            ><button class="btn bg-body-secondary fw-bold">Todos</button></a
-          >
-          <a href="#"
-            ><button class="btn bg-body-secondary fw-bold">Artículos</button></a
-          >
-          <a href="#"
-            ><button class="btn bg-body-secondary fw-bold">Vídeos</button></a
-          >
-          <a href="#"
-            ><button class="btn bg-body-secondary fw-bold">
-              Tutoriales
-            </button></a
-          >
+          <button class="btn fw-bold btn-filter text-white" style="background-color: blue" data-filter="todos">Todos</button>
+          <button class="btn bg-body-secondary fw-bold btn-filter" data-filter="articulo">Artículos</button>
+          <button class="btn bg-body-secondary fw-bold btn-filter" data-filter="video">Vídeos</button>
+          <button class="btn bg-body-secondary fw-bold btn-filter" data-filter="tutorial">Tutoriales</button>
         </div>
       </div>
       <div class="row g-3 py-3 text-center">
@@ -207,194 +198,11 @@
           </a>
         </div>
       </div>
-      <!-- ARTÍCULOS RECIENTES -->
+      <!-- CONTENEDOR DINÁMICO DE RECURSOS -->
       <div>
-        <h4 class="fw-bold mb-1 py-3">Artículos Recientes</h4>
-        <div class="row g-4">
-          <div class="col-12 col-md-6">
-            <a href="#" class="text-decoration-none h-100 d-block">
-              <div class="card border rounded-4 p-4 h-100">
-                <div class="row g-0">
-                  <div class="col-2 text-center">
-                    <i class="bi bi-layers fs-2 border rounded-3 px-2"></i>
-                  </div>
-                  <div class="col">
-                    <span class="text-bg-dark rounded-5 px-3 py-1"
-                      >Entrevistas</span
-                    >
-                    <br /><br />
-                    <p class="fs-5">
-                      ¿Cómo prepara una entrevista técnica exitosa?
-                    </p>
-                    <div class="row">
-                      <div class="col">
-                        <p class="fw-bold mb-0">8 min de lectura</p>
-                      </div>
-                      <div class="col">
-                        <p class="fw-bold mb-0">2412 vistas</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-12 col-md-6">
-            <a href="#" class="text-decoration-none h-100 d-block">
-              <div class="card border rounded-4 p-4 h-100">
-                <div class="row g-0">
-                  <div class="col-2 text-center">
-                    <i class="bi bi-layers fs-2 border rounded-3 px-2"></i>
-                  </div>
-                  <div class="col">
-                    <span class="text-bg-dark rounded-5 px-3 py-1"
-                      >Entrevistas</span
-                    >
-                    <br /><br />
-                    <p class="fs-5">
-                      ¿Cómo prepara una entrevista técnica exitosa?
-                    </p>
-                    <div class="row">
-                      <div class="col">
-                        <p class="fw-bold mb-0">8 min de lectura</p>
-                      </div>
-                      <div class="col">
-                        <p class="fw-bold mb-0">2412 vistas</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-12 col-md-6">
-            <a href="#" class="text-decoration-none h-100 d-block">
-              <div class="card border rounded-4 p-4 h-100">
-                <div class="row g-0">
-                  <div class="col-2 text-center">
-                    <i class="bi bi-layers fs-2 border rounded-3 px-2"></i>
-                  </div>
-                  <div class="col">
-                    <span class="text-bg-dark rounded-5 px-3 py-1"
-                      >Entrevistas</span
-                    >
-                    <br /><br />
-                    <p class="fs-5">
-                      ¿Cómo prepara una entrevista técnica exitosa?
-                    </p>
-                    <div class="row">
-                      <div class="col">
-                        <p class="fw-bold mb-0">8 min de lectura</p>
-                      </div>
-                      <div class="col">
-                        <p class="fw-bold mb-0">2412 vistas</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-12 col-md-6">
-            <a href="#" class="text-decoration-none h-100 d-block">
-              <div class="card border rounded-4 p-4 h-100">
-                <div class="row g-0">
-                  <div class="col-2 text-center">
-                    <i class="bi bi-layers fs-2 border rounded-3 px-2"></i>
-                  </div>
-                  <div class="col">
-                    <span class="text-bg-dark rounded-5 px-3 py-1"
-                      >Entrevistas</span
-                    >
-                    <br /><br />
-                    <p class="fs-5">
-                      ¿Cómo prepara una entrevista técnica exitosa?
-                    </p>
-                    <div class="row">
-                      <div class="col">
-                        <p class="fw-bold mb-0">8 min de lectura</p>
-                      </div>
-                      <div class="col">
-                        <p class="fw-bold mb-0">2412 vistas</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-      <!-- VIDEOS POPULARES -->
-      <div class="py-3">
-        <h4 class="fw-bold mb-1 py-3">Videos Populares</h4>
-        <div class="row g-4">
-          <div class="col-12 col-md-4">
-            <div class="card rounded-3 h-100">
-              <div
-                class="text-center text-light rounded-top-3 p-5"
-                style="background-color: blue"
-              >
-                <i class="bi bi-camera-video-fill fs-1"></i>
-              </div>
-              <div class="p-3">
-                <span class="text-bg-dark rounded-5 px-3 py-1">Networking</span>
-                <p class="fw-bold mt-3">¿Cómo destacar en LinkedIn?</p>
-                <a href="#" class="text-decoration-none">
-                  <button
-                    class="btn text-light rounded-4"
-                    style="background-color: blue"
-                  >
-                    Ver Video
-                  </button>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-md-4">
-            <div class="card rounded-3 h-100">
-              <div
-                class="text-center text-light rounded-top-3 p-5"
-                style="background-color: blue"
-              >
-                <i class="bi bi-camera-video-fill fs-1"></i>
-              </div>
-              <div class="p-3">
-                <span class="text-bg-dark rounded-5 px-3 py-1">Networking</span>
-                <p class="fw-bold mt-3">¿Cómo destacar en LinkedIn?</p>
-                <a href="#" class="text-decoration-none">
-                  <button
-                    class="btn text-light rounded-4"
-                    style="background-color: blue"
-                  >
-                    Ver Video
-                  </button>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-md-4">
-            <div class="card rounded-3 h-100">
-              <div
-                class="text-center text-light rounded-top-3 p-5"
-                style="background-color: blue"
-              >
-                <i class="bi bi-camera-video-fill fs-1"></i>
-              </div>
-              <div class="p-3">
-                <span class="text-bg-dark rounded-5 px-3 py-1">Networking</span>
-                <p class="fw-bold mt-3">¿Cómo destacar en LinkedIn?</p>
-                <a href="#" class="text-decoration-none">
-                  <button
-                    class="btn text-light rounded-4"
-                    style="background-color: blue"
-                  >
-                    Ver Video
-                  </button>
-                </a>
-              </div>
-            </div>
-          </div>
+        <h4 class="fw-bold mb-1 py-3">Resultados</h4>
+        <div id="recursos-container" class="row g-4">
+          <!-- Los recursos se generarán con JS -->
         </div>
       </div>
     </div>
@@ -456,5 +264,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="../js/searchNavBar.js"></script>
+    <script src="/js/resources.js"></script>
   </body>
 </html>

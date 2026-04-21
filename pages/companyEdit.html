@@ -95,7 +95,7 @@
               >
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link text-dark"
+              <a href="#" class="nav-link text-dark nav-mi-perfil"
                 ><i class="bi bi-person-fill"></i> Mi Perfil</a
               >
             </li>
@@ -217,11 +217,11 @@
                   >
                   <select id="input-tamano" class="form-select form-select-sm">
                     <option value="">Seleccionar Tamaño</option>
-                    <option>1 - 10</option>
-                    <option>11 - 50</option>
-                    <option>51 - 200</option>
-                    <option>201 - 500</option>
-                    <option>500+</option>
+                    <option value="1-10">1 - 10</option>
+                    <option value="11-50">11 - 50</option>
+                    <option value="51-200">51 - 200</option>
+                    <option value="201-500">201 - 500</option>
+                    <option value="500+">500+</option>
                   </select>
                 </div>
                 <div class="col-md-6">
@@ -309,6 +309,7 @@
                     id="btn-guardar-perfil"
                     class="btn btn-sm fw-bold text-light"
                     style="background-color: blue"
+                    onclick="saveProfile()"
                   >
                     Guardar Cambios
                   </button>

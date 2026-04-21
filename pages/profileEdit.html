@@ -95,7 +95,7 @@
               >
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link text-dark"
+              <a href="#" class="nav-link text-dark nav-mi-perfil"
                 ><i class="bi bi-person-fill"></i> Mi Perfil</a
               >
             </li>
@@ -115,7 +115,7 @@
         >
           <i class="bi bi-bookmark-star-fill"></i> Valoraciones
         </a>
-        <a href="#" class="text-dark text-decoration-none">
+        <a href="#" class="text-dark text-decoration-none nav-mi-perfil">
           <i class="bi bi-person-fill"></i> Mi Perfil
         </a>
       </div>
@@ -138,9 +138,10 @@
               ></div>
               <h6 class="fw-bold mb-0" id="sidebar-nombre"></h6>
               <p class="text-muted small mb-3" id="sidebar-titulo"></p>
-              <button class="btn btn-outline-secondary btn-sm w-100 mb-3">
+              <button class="btn btn-outline-secondary btn-sm w-100 mb-3" onclick="document.getElementById('input-avatar').click()">
                 <i class="bi bi-upload me-1"></i> Cambiar Foto
               </button>
+              <input id="input-avatar" type="file" accept="image/*" class="d-none" onchange="uploadPhoto()" />
               <div class="text-start mb-1">
                 <small class="text-muted">Completitud de Perfil</small>
               </div>
@@ -321,10 +322,7 @@
                         style="width: 160px"
                         placeholder="Nueva habilidad..."
                       />
-                      <button
-                        class="btn btn-dark btn-sm"
-                        onclick="agregarSkill()"
-                      >
+                      <button class="btn btn-dark btn-sm" onclick="addSkill()">
                         Agregar Habilidad
                       </button>
                     </div>
@@ -333,7 +331,7 @@
                   <button
                     class="btn text-light"
                     style="background-color: blue"
-                    onclick="guardarPerfil()"
+                    onclick="saveProfile()"
                   >
                     Guardar Cambios
                   </button>
@@ -362,7 +360,7 @@
                           type="file"
                           accept=".pdf,.docx"
                           class="d-none"
-                          onchange="subirCV()"
+                          onchange="uploadCV()"
                         />
                         <button
                           class="btn text-light"
@@ -443,7 +441,7 @@
                             <button
                               class="btn text-light"
                               style="background-color: blue"
-                              onclick="agregarExperiencia()"
+                              onclick="addExperience()"
                             >
                               Agregar Experiencia
                             </button>

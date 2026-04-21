@@ -69,7 +69,12 @@ const renderPerfil = (perfil) => {
   document.getElementById("loading").classList.add("d-none");
   document.getElementById("contenido").classList.remove("d-none");
 
-  document.getElementById("avatar").textContent = getInitials(perfil.full_name);
+  if (perfil.avatar_url) {
+    document.getElementById("avatar").innerHTML = `<img src="${perfil.avatar_url}" alt="Avatar" class="w-100 h-100 rounded-circle object-fit-cover" style="width: 120px; height: 120px;">`;
+  } else {
+    document.getElementById("avatar").innerHTML = ""; // Limpiar imagen previa
+    document.getElementById("avatar").textContent = getInitials(perfil.full_name);
+  }
 
   document.getElementById("nombre").textContent = perfil.full_name ?? "";
   document.getElementById("titulo").textContent =
@@ -94,12 +99,16 @@ const renderPerfil = (perfil) => {
 };
 
 const getPerfil = () => {
-  const id = getIdFromURL();
+  let id = getIdFromURL();
+
+  if (!id) {
+    id = localStorage.getItem("userId");
+  }
 
   if (!id) {
     document.getElementById("loading").classList.add("d-none");
     document.getElementById("error").textContent =
-      "No se especificó un usuario.";
+      "No se especificó un usuario o debes iniciar sesión.";
     document.getElementById("error").classList.remove("d-none");
     return;
   }

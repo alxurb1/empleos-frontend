@@ -147,9 +147,9 @@ const renderVacante = (vacante) => {
 };
 
 const postularse = (id_vacancy) => {
-  const id_user = localStorage.getItem("id_user");
+  const userId = localStorage.getItem("userId");
 
-  if (!id_user) {
+  if (!userId) {
     alert("Debes iniciar sesión para postularte.");
     return;
   }
@@ -157,7 +157,7 @@ const postularse = (id_vacancy) => {
   fetch(`${API_URL}/vacancies/${id_vacancy}/apply`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ id_user }),
+    body: JSON.stringify({ id_user: userId }),
   })
     .then((reply) => reply.json())
     .then((data) => {
