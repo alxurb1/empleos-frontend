@@ -1,18 +1,9 @@
 const PAGE_ROLES = {
   "admin.html": ["admin"],
-  "home.html": ["candidate", "company"],
-  "profile.html": ["candidate", "company", "admin"],
+  "profile.html": ["candidate", "company"],
   "profileEdit.html": ["candidate"],
   "perfil_empresa.html": ["candidate", "company"],
   "companyEdit.html": ["company"],
-  "vacancy_details.html": ["candidate", "company"],
-  "search_results.html": ["candidate", "company"],
-  "forums_and_ratings.html": ["candidate", "company"],
-  "resources.html": ["candidate"],
-  "cv_resources.html": ["candidate"],
-  "development_resources.html": ["candidate"],
-  "interviews_resources.html": ["candidate"],
-  "skills_resources.html": ["candidate"],
 };
 
 const checkAccess = () => {
@@ -40,7 +31,6 @@ const checkAccess = () => {
     window.location.href = "/pages/login.html";
     return;
   }
-
   if (allowedRoles.includes(role)) {
     revealPage();
   } else {
