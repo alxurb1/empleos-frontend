@@ -73,7 +73,7 @@ const renderEmpleosSimilares = (vacantes) => {
                 <i class="bi bi-stack text-primary"></i>
               </div>
               <div>
-                <a href="detalle-empleo.html?id=${v.id_vacancy}"
+                <a href="vacancy_details.html?id=${v.id_vacancy}"
                   class="fw-bold small mb-0 text-dark text-decoration-none d-block">
                   ${v.title}
                 </a>
@@ -133,7 +133,7 @@ const renderVacante = (vacante) => {
 
   if (vacante.companies?.id_company) {
     document.getElementById("empresa-link").href =
-      `perfil-empresa.html?id=${vacante.companies.id_company}`;
+      `perfil_empresa.html?id=${vacante.companies.id_company}`;
   }
 
   document.getElementById("btn-postular").addEventListener("click", () => {
