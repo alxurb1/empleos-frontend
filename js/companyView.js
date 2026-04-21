@@ -48,7 +48,7 @@ const renderVacantes = (vacantes) => {
               <p class="text-muted small mb-0">${v.location ?? ""} ${modalidad ? "· " + modalidad : ""}</p>
               <p class="text-muted small mb-0">Publicado el ${fecha}</p>
             </div>
-            <a href="./job-detail.html?id=${v.id_vacancy}">
+            <a href="./vacancy_details.html?id=${v.id_vacancy}">
               <button class="btn btn-sm fw-bold text-light" style="background-color:blue">Ver Vacante</button>
             </a>
           </div>

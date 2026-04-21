@@ -52,8 +52,31 @@ if (isToken) {
       btn.href = `./profileEdit.html`;
     } else if (userRole === "company") {
       btn.href = `./companyEdit.html`;
+    } else if (userRole === "admin") {
+      btn.href = `./admin.html`;
     }
   });
+
+  if (userRole === "admin") {
+    const desktopNavbar = document.querySelector(".d-none.d-lg-flex.gap-5");
+    if (desktopNavbar) {
+      const dashboardLinkDesktop = document.createElement("a");
+      dashboardLinkDesktop.href = "./admin.html";
+      dashboardLinkDesktop.className = "text-dark text-decoration-none ";
+      dashboardLinkDesktop.innerHTML =
+        '<i class="bi bi-speedometer2"></i> Dashboard';
+      desktopNavbar.prepend(dashboardLinkDesktop);
+    }
+
+    const mobileNav = document.querySelector(".navbar-nav.d-lg-none");
+    if (mobileNav) {
+      const li = document.createElement("li");
+      li.className = "nav-item";
+      li.innerHTML =
+        '<a href="./admin.html" class="nav-link text-dark fw-bold"><i class="bi bi-speedometer2"></i> Dashboard</a>';
+      mobileNav.prepend(li);
+    }
+  }
 } else {
   if (divLogIn) divLogIn.classList.remove("d-none");
   if (divPerfil) divPerfil.classList.add("d-none");
