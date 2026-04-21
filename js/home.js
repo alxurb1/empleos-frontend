@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <small class="text-muted d-block"><i class="bi bi-briefcase me-1"></i>${modalityText}</small>
             <small class="text-primary fw-bold d-block mt-1"><i class="bi bi-currency-dollar"></i>${salaryText}</small>
             <div class="d-flex justify-content-between align-items-center mt-3">
-              <button class="btn btn-sm text-light" style="background-color: blue">Ver Más</button>
+              <button class="btn btn-sm text-light" style="background-color: blue" onclick="window.location.href='vacancy_details.html?id=${vacancy.id_vacancy}'">Ver Más</button>
             </div>
           </div>
         </div>
